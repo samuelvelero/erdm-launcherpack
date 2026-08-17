@@ -98,7 +98,7 @@
     "commandNameSetblock": "setblock",
     "commandNameSummon": "summon",
     "commandTaskInterval": 1,
-    "customSchematicBaseDirectory": "C:\\Samukis Work - Activos (SSD)\\Samukis \u0026 Claude\\RinconDeMinecraft-Launcher\\PrismLauncher-Windows-MSVC-Portable-11.0.3\\instances\\ERDM-Official\\minecraft\\schematics",
+    "customSchematicBaseDirectory": "schematics",
     "easyPlaceSwapInterval": 0,
     "pickBlockableSlots": "1,2,3,4,5",
     "toolItem": "minecraft:stick",

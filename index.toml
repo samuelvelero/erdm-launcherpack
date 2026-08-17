@@ -206,7 +206,7 @@ hash = "bb8cb6eb6e2e494d555d12480af6a8f60c49ede0edbf7fe73fec0c5948c160e2"
 
 [[files]]
 file = "config/litematica.json"
-hash = "61a9ad3d9237ad0d448e0d908979fdc6fa0aa6b5fa26325541ae98fe8a914823"
+hash = "f6a1282c0c2f1d02968603c7c08ec62a49c21446a1d0804bd46fa59643c8bc23"
 
 [[files]]
 file = "config/litematica/litematica_54.39.173.193_25598.json"
@@ -622,6 +622,10 @@ metafile = true
 file = "mods/zoomify.pw.toml"
 hash = "eaa952b86a8502ce65767a7399c3deacf3bfee3ead93f84174f7e37ad9713274"
 metafile = true
+
+[[files]]
+file = "packwiz-installer.jar"
+hash = "c9f646908d340d84773948a9a7d98bc1dae250d35e1016dc6e2b8459760b5598"
 
 [[files]]
 file = "resourcepacks/3d-harnesses-x-fresh-animations.pw.toml"
