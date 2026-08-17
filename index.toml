@@ -1,14 +1,6 @@
 hash-format = "sha256"
 
 [[files]]
-file = "README.md"
-hash = "0e9a48bd765399a7d6e21085f5526509db10679a4dd6a92fbbe3f69af8fc4a40"
-
-[[files]]
-file = "actualizar-pack.ps1"
-hash = "8e4cc778a74e974586440b7130a378a8ce0137703fdeb8788c0e28bc55fcb385"
-
-[[files]]
 file = "config/DistantHorizons.toml"
 hash = "ef48fba49a8dbeda2d8bbbd02e0b079854d1c7e321e3ef70bd6bd688d876c332"
 
@@ -622,10 +614,6 @@ metafile = true
 file = "mods/zoomify.pw.toml"
 hash = "eaa952b86a8502ce65767a7399c3deacf3bfee3ead93f84174f7e37ad9713274"
 metafile = true
-
-[[files]]
-file = "packwiz-installer.jar"
-hash = "c9f646908d340d84773948a9a7d98bc1dae250d35e1016dc6e2b8459760b5598"
 
 [[files]]
 file = "resourcepacks/3d-harnesses-x-fresh-animations.pw.toml"

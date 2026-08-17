@@ -86,7 +86,7 @@ if ($LASTEXITCODE -ne 0) { throw "packwiz refresh falló (código $LASTEXITCODE)
 $entradas = (Select-String -Path 'index.toml' -Pattern '^\[\[files\]\]' -AllMatches).Count
 Write-Host "      $entradas archivos en el índice"
 
-# --- Red de seguridad: que no se cuele un binario en el repo ---
+# --- Red de seguridad 1: que no se cuele un binario en el repo ---
 $sospechosos = git ls-files --others --cached |
     Where-Object { $_ -match '\.(jar|zip)$' -and $_ -notmatch 'bootstrap\.jar$' }
 if ($sospechosos) {
@@ -94,6 +94,24 @@ if ($sospechosos) {
     $sospechosos | ForEach-Object { Write-Warning "  $_" }
     return
 }
+
+# --- Red de seguridad 2: todo lo indexado debe existir en el repositorio ---
+# .packwizignore y .gitignore son listas independientes. Si un archivo entra al
+# índice pero git lo ignora, GitHub devuelve 404 al descargarlo y el pack se
+# rompe para todos los jugadores. Pasó con packwiz-installer.jar, que además el
+# bootstrap auto-actualiza (el fallo aparecía semanas después, sin tocar nada).
+$indexados = Select-String -Path 'index.toml' -Pattern '^file = "(.+?)"' |
+    ForEach-Object { $_.Matches[0].Groups[1].Value }
+$enRepo = [System.Collections.Generic.HashSet[string]]::new(
+    [string[]](git ls-files), [System.StringComparer]::OrdinalIgnoreCase)
+$huerfanos = $indexados | Where-Object { -not $enRepo.Contains($_) }
+if ($huerfanos) {
+    Write-Warning 'Estos archivos están en index.toml pero NO en el repositorio.'
+    Write-Warning 'Cada uno sería un 404 para los jugadores. Añádelos a .packwizignore:'
+    $huerfanos | ForEach-Object { Write-Warning "  $_" }
+    return
+}
+Write-Host "      $($indexados.Count) archivos indexados, todos presentes en el repo"
 
 # ------------------------------------------------------------------
 #  Paso 3: publicar

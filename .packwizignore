@@ -77,3 +77,17 @@
 /packwiz-installer-bootstrap.jar
 /packwiz.json
 /.packwiz-installer-cache/
+
+# packwiz-installer.jar lo descarga y AUTO-ACTUALIZA el bootstrap. Si entra al
+# índice se crea una bomba de relojería: git lo ignora (no está en el repo),
+# así que en cuanto el bootstrap lo actualice a una versión nueva el hash
+# dejará de cuadrar, packwiz intentará bajarlo del repo y recibirá un 404.
+# Se rompería el pack para todos los jugadores a la vez.
+/packwiz-installer.jar
+
+# --- Documentación y utilidades de desarrollo ---
+# Se quedan en el repositorio (son útiles en GitHub), pero NO se distribuyen:
+# si entran al índice, cada jugador acaba con el README y el script de
+# publicación dentro de su carpeta de Minecraft.
+/README.md
+/actualizar-pack.ps1
