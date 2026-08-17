@@ -85,6 +85,12 @@
 # Se rompería el pack para todos los jugadores a la vez.
 /packwiz-installer.jar
 
+# packwiz-sync.bat es el script que LANZA a packwiz. Si se distribuyera por el
+# propio pack, packwiz podría reescribirlo mientras cmd.exe lo está ejecutando
+# (cmd lee los .bat de forma incremental, no los carga enteros), con resultados
+# impredecibles. Viaja en el instalador, no en el índice.
+/packwiz-sync.bat
+
 # --- Documentación y utilidades de desarrollo ---
 # Se quedan en el repositorio (son útiles en GitHub), pero NO se distribuyen:
 # si entran al índice, cada jugador acaba con el README y el script de
