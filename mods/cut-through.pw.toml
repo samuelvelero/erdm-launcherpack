@@ -1,0 +1,29 @@
+filename = 'CutThrough-v26.2.0-mc26.2.x-Fabric.jar'
+name = 'Cut Through'
+side = 'client'
+x-prismlauncher-loaders = [ 'fabric' ]
+x-prismlauncher-mc-versions = [ '26.2' ]
+x-prismlauncher-release-type = 'release'
+x-prismlauncher-version-number = '26.2.0'
+
+[download]
+hash = '73988cdd77699e01d1f6a844f97c9882b462e88cb5a221e9aecedee7a0776070f90b6ab95d9cfe44f74c9b93bb49c5170caf10630409a3aaacdc2d2972fbc8b8'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/Dk6su9JN/versions/WhJ0S6SM/CutThrough-v26.2.0-mc26.2.x-Fabric.jar'
+
+[update.modrinth]
+mod-id = 'Dk6su9JN'
+version = 'WhJ0S6SM'
+
+[[x-prismlauncher-dependencies]]
+addonId = 'P7dR8mSH'
+type = 'REQUIRED'
+
+[[x-prismlauncher-dependencies]]
+addonId = 'QAGBst4M'
+type = 'REQUIRED'
+
+[[x-prismlauncher-dependencies]]
+addonId = 'ohNO6lps'
+type = 'REQUIRED'

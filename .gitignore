@@ -1,0 +1,63 @@
+# ============================================================
+#  .gitignore del repo del modpack ERDM-Official
+#
+#  Este repo ES la carpeta "minecraft" de la instancia de Prism,
+#  que contiene ~1 GB de datos locales (mundos, cachés, binarios).
+#  Por eso se ignora TODO por defecto y se readmite solo el pack.
+# ============================================================
+
+# --- Ignorar todo lo de la raíz ---
+/*
+
+# --- Readmitir los archivos del pack ---
+!/.gitignore
+!/.gitattributes
+!/.packwizignore
+!/pack.toml
+!/index.toml
+!/README.md
+!/actualizar-pack.ps1
+!/packwiz-installer-bootstrap.jar
+
+# --- Readmitir las carpetas distribuidas ---
+!/mods/
+!/config/
+!/resourcepacks/
+!/shaderpacks/
+!/emotes/
+
+# ============================================================
+#  Exclusiones dentro de las carpetas readmitidas
+# ============================================================
+
+# Binarios: viven en Modrinth, aquí solo van los .pw.toml
+/mods/*.jar
+/mods/*.jar.disabled
+/resourcepacks/*.zip
+/shaderpacks/*.zip
+
+# Metadatos internos de Prism (ver nota en .packwizignore:
+# si se indexan desde aquí, los mods se instalan en la carpeta
+# equivocada y el juego arranca sin mods)
+/mods/.index/
+
+# Cachés que DreamDisplays regenera solo
+/config/dreamdisplays/thumb-cache/
+/config/dreamdisplays/yt-cache/
+/config/dreamdisplays/watched-videos.json
+/config/dreamdisplays/fullscreen-sessions.json
+
+# Estado local de cada jugador
+/config/sodium-fingerprint.json
+/config/iris-excluded.json
+/config/xaeropatreon.txt
+/config/controlify/*.lock
+
+# Export duplicado de Emotecraft
+/emotes/emotes.zip
+/emotes/emotecraft_export/
+
+# Estado que genera el propio instalador en el cliente
+/packwiz.json
+/packwiz-installer.jar
+/.packwiz-installer-cache/

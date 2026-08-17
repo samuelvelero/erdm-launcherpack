@@ -1,0 +1,29 @@
+filename = 'startuptimer-1.0.2+26.2-fabric.jar'
+name = 'Startup Timer'
+side = 'client'
+x-prismlauncher-loaders = [ 'fabric' ]
+x-prismlauncher-mc-versions = [ '26.2' ]
+x-prismlauncher-release-type = 'release'
+x-prismlauncher-version-number = '1.0.2'
+
+[download]
+hash = '0c98bdb1fd032ed7eb156676665a050ba342d80ce6c2c0a838ab8ed9b7c40d67b219ccef4e44b2957e5817536e3af40265906b9a5c37d43a7819d45d92d3df90'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/oSqzHTSY/versions/2RfkwG8Z/startuptimer-1.0.2%2B26.2-fabric.jar'
+
+[update.modrinth]
+mod-id = 'oSqzHTSY'
+version = '2RfkwG8Z'
+
+[[x-prismlauncher-dependencies]]
+addonId = 'mOgUt4GM'
+type = 'REQUIRED'
+
+[[x-prismlauncher-dependencies]]
+addonId = 'P7dR8mSH'
+type = 'REQUIRED'
+
+[[x-prismlauncher-dependencies]]
+addonId = '1eAoo2KR'
+type = 'REQUIRED'

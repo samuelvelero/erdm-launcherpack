@@ -1,0 +1,13 @@
+name = "ERDM-Official"
+author = "Samukis"
+version = "1.0.0"
+pack-format = "packwiz:1.1.0"
+
+[index]
+file = "index.toml"
+hash-format = "sha256"
+hash = "2bcb11709cfcfa29ab549c37e4dd839c185b851648f8b1969e6bebae4c1f941d"
+
+[versions]
+fabric = "0.19.3"
+minecraft = "26.2"

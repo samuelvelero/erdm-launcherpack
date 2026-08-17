@@ -1,0 +1,13 @@
+# ============================================================
+#  NO TOCAR sin entender esto.
+#
+#  packwiz calcula los hashes de index.toml sobre los archivos
+#  tal y como están en disco. Si git normaliza los saltos de
+#  línea (core.autocrlf, que en Git for Windows viene activado
+#  por defecto), GitHub acaba sirviendo un contenido distinto
+#  del que se hasheó, y a TODOS los jugadores les falla la
+#  validación con "Invalid hash" en cada archivo de texto.
+#
+#  Por eso: ninguna conversión de saltos de línea, nunca.
+# ============================================================
+* -text

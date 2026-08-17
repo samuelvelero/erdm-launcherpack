@@ -1,0 +1,13 @@
+name = "BARE SKIES. Bare Bones' sky"
+filename = "bare-skies-1.6.zip"
+side = "client"
+
+[download]
+url = "https://cdn.modrinth.com/data/D9pOJYYX/versions/7z83u3DI/bare-skies-1.6.zip"
+hash-format = "sha512"
+hash = "a5d8126e63b8af8978512b2a703b3123d548693fb8a98a75a1ed2ceafef4aef67c219e3e23055defc818c03e9d3efb5a052855885fc0abfac6576bcdf2563a42"
+
+[update]
+[update.modrinth]
+mod-id = "D9pOJYYX"
+version = "7z83u3DI"

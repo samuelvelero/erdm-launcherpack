@@ -1,0 +1,67 @@
+{
+    "schemaVersion": 1,
+    "data": {
+        "5ba8ee57-ce60-4ef8-8568-f34709988bb3": {
+            "volume": 0.125,
+            "quality": "1080",
+            "brightness": 1.0,
+            "muted": false,
+            "paused": true,
+            "savedTimeNanos": 306209023475,
+            "renderDistance": 96,
+            "pipOpen": true,
+            "pipAnchor": "TOP_RIGHT",
+            "pipSizeFraction": 0.23565218,
+            "acousticsEnabled": true
+        },
+        "ea82bad6-f76a-4365-9e67-e006b54df723": {
+            "volume": 0.15,
+            "quality": "1080",
+            "brightness": 1.0,
+            "muted": false,
+            "paused": false,
+            "savedTimeNanos": 5746065500,
+            "renderDistance": 96,
+            "pipOpen": true,
+            "pipAnchor": "TOP_RIGHT",
+            "pipSizeFraction": 0.25,
+            "acousticsEnabled": true
+        },
+        "60be3503-b526-448d-b0e7-6a22dee7e0c2": {
+            "volume": 0.4,
+            "quality": "958",
+            "brightness": 1.0,
+            "muted": false,
+            "paused": false,
+            "savedTimeNanos": 0,
+            "renderDistance": 96,
+            "pipOpen": false,
+            "pipSizeFraction": 0.0,
+            "acousticsEnabled": true
+        },
+        "56026eb8-b470-4620-908b-2aab4f0efc1e": {
+            "volume": 0.25,
+            "quality": "1080",
+            "brightness": 1.0,
+            "muted": false,
+            "paused": true,
+            "savedTimeNanos": 258008000000,
+            "renderDistance": 96,
+            "pipOpen": false,
+            "pipSizeFraction": 0.0,
+            "acousticsEnabled": true
+        },
+        "ce2831d4-9793-4435-801e-73f217a3c3f9": {
+            "volume": 0.25,
+            "quality": "1080",
+            "brightness": 1.0,
+            "muted": false,
+            "paused": false,
+            "savedTimeNanos": 39773915900,
+            "renderDistance": 96,
+            "pipOpen": false,
+            "pipSizeFraction": 0.0,
+            "acousticsEnabled": true
+        }
+    }
+}

@@ -1,0 +1,79 @@
+# ============================================================
+#  .packwizignore  —  qué NO entra en el índice del modpack
+#  Sintaxis idéntica a .gitignore.
+#
+#  Se distribuyen SOLO: mods/ config/ resourcepacks/
+#                       shaderpacks/ emotes/
+#  Todo lo demás se excluye explícitamente aquí abajo.
+#  (No se puede usar "/*" + excepciones: packwiz aplica la regla
+#   gitignore de que no se readmite nada dentro de una carpeta
+#   ya excluida, y el índice sale vacío.)
+# ============================================================
+
+# --- Metadatos internos de Prism Launcher ---
+# Prism escribe sus propios .pw.toml aquí, en formato packwiz pero en
+# una subcarpeta. Si se indexan desde ahí, packwiz-installer descarga
+# los .jar a "mods/.index/" en vez de a "mods/" (resuelve el destino
+# como hermano del metafile) y el juego arranca SIN NINGÚN MOD.
+# Los metafiles buenos viven en "mods/"; esta carpeta es solo de Prism.
+# El script actualizar-pack.ps1 sincroniza una hacia la otra.
+/mods/.index/
+
+# --- Binarios de mods/packs: NO van al repo ---
+# Los 57 archivos existen en Modrinth, así que packwiz guarda solo
+# un .pw.toml por archivo (~400 bytes) y cada jugador lo baja de
+# Modrinth. Sin esto el repo pesaría 115 MB en vez de ~1 MB.
+/mods/*.jar
+/mods/*.jar.disabled
+/resourcepacks/*.zip
+/shaderpacks/*.zip
+
+# --- Mundos y datos de partida (889 MB) ---
+/saves/
+/Distant_Horizons_server_data/
+/schematics/
+/screenshots/
+
+# --- Binarios que los mods se descargan solos (~280 MB) ---
+/dreamdisplays/
+/libs/
+/config/dreamdisplays/thumb-cache/
+/config/dreamdisplays/yt-cache/
+/config/dreamdisplays/watched-videos.json
+/config/dreamdisplays/fullscreen-sessions.json
+
+# --- Cachés y estado de ejecución ---
+/.cache/
+/.fabric/
+/downloads/
+/logs/
+/coremods/
+/data/
+/defaultconfigs/
+/texturepacks/
+/resourcify-temp/
+/server-resource-packs/
+/debug-profile.json
+/usercache.json
+/command_history.txt
+/icon.png
+
+# --- Estado local de cada jugador ---
+/options.txt
+/servers.dat
+/servers.dat_old
+/xaero/
+/XaeroWaypoints_BACKUP240807/
+/config/sodium-fingerprint.json
+/config/iris-excluded.json
+/config/xaeropatreon.txt
+/config/controlify/*.lock
+
+# --- Export duplicado que genera Emotecraft (1.4 MB) ---
+/emotes/emotes.zip
+/emotes/emotecraft_export/
+
+# --- Ficheros del propio packwiz / instalador ---
+/packwiz-installer-bootstrap.jar
+/packwiz.json
+/.packwiz-installer-cache/

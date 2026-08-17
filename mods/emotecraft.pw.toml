@@ -1,0 +1,29 @@
+filename = 'emotecraft-for-MC26.2-3.4.0-b.build.162.jar'
+name = 'Emotecraft'
+side = 'both'
+x-prismlauncher-loaders = [ 'neoforge', 'fabric' ]
+x-prismlauncher-mc-versions = [ '26.2' ]
+x-prismlauncher-release-type = 'beta'
+x-prismlauncher-version-number = '3.4.0-b.build.162'
+
+[download]
+hash = '0af6bdc1910f89ad32047a27f68a701c2ab824dc999cf1dc902b41438f222028830a9fcfb9fbaf8bb803e5fa7027a0a64e6df53fe191f6ecedb55286b490397d'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/pZ2wrerK/versions/r6QJBg3z/emotecraft-for-MC26.2-3.4.0-b.build.162.jar'
+
+[update.modrinth]
+mod-id = 'pZ2wrerK'
+version = 'r6QJBg3z'
+
+[[x-prismlauncher-dependencies]]
+addonId = 'fuuu3xnx'
+type = 'OPTIONAL'
+
+[[x-prismlauncher-dependencies]]
+addonId = 'OI3FlFon'
+type = 'OPTIONAL'
+
+[[x-prismlauncher-dependencies]]
+addonId = 'ha1mEyJS'
+type = 'REQUIRED'
