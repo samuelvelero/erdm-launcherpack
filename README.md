@@ -38,6 +38,32 @@ Prism sí funciona, porque entonces QSettings aplica su propio escapado.
 que QSettings lo conserva tal cual. El entrecomillado de rutas con espacios se
 resuelve dentro del `.bat`, donde las reglas de cmd.exe son predecibles.
 
+### El `.bat` no se fía de `%INST_JAVA%`
+
+Hay una segunda trampa, y solo se manifiesta en el **primer arranque tras
+instalar**. Prism captura el entorno del pre-launch en el *constructor* del paso
+(`PreLaunchCommand.cpp` → `createEnvironment()`), o sea al construir la lista de
+pasos — **antes de que `AutoInstallJava` se ejecute** y resuelva el Java. En una
+instalación nueva `JavaPath` aún está vacío, y `getVariables()` hace:
+
+```cpp
+QDir::toNativeSeparators(QDir(settings()->get("JavaPath").toString()).absolutePath())
+```
+
+`QDir("").absolutePath()` devuelve el **directorio de trabajo**, así que
+`%INST_JAVA%` llega valiendo la carpeta del launcher en lugar de un ejecutable,
+y cmd responde `9009` (*no se reconoce como comando*). A partir del segundo
+arranque ya sería correcto — pero el primero es el de todos los jugadores nuevos.
+
+Ojo con la comprobación: `if exist` **también es cierto para carpetas**, así que
+verificar la existencia no basta; hay que exigir que sea un fichero `.exe`. Por
+eso el `.bat` valida `%INST_JAVA%` y, si no sirve, busca el runtime por su
+cuenta en `<launcher>\java\*\bin\java.exe` partiendo de `%~dp0`.
+
+`$INST_JAVA` **en la cadena del comando** sí se resuelve al ejecutar y sería
+correcto; es la *variable de entorno* la que está congelada. Ambas se llaman
+igual y valen cosas distintas.
+
 El `.bat` además usa `java.exe` en vez de `javaw.exe` (que no escribe en la
 consola) para que los errores de packwiz aparezcan en el registro de Prism, y
 pasa `--bootstrap-no-update`: sin ese flag el bootstrap consulta
