@@ -19,8 +19,15 @@ La instancia de Prism tiene un **pre-launch command** que ejecuta
 `packwiz-installer-bootstrap.jar` antes de abrir el juego:
 
 ```
-"$INST_JAVA" -jar packwiz-installer-bootstrap.jar https://raw.githubusercontent.com/samuelvelero/erdm-launcherpack/main/pack.toml
+"$INST_JAVA" -jar packwiz-installer-bootstrap.jar --bootstrap-no-update https://raw.githubusercontent.com/samuelvelero/erdm-launcherpack/main/pack.toml
 ```
+
+`--bootstrap-no-update` es importante: sin él, el bootstrap consulta
+`api.github.com` en **cada arranque** para ver si hay una versión nueva de
+`packwiz-installer.jar`. Si GitHub no responde, el pre-launch devuelve error y
+Prism **aborta el lanzamiento** — un hipo de red deja al jugador fuera. Como el
+`.jar` ya viaja en el instalador, esa comprobación no aporta nada. Para
+actualizarlo algún día, borra `packwiz-installer.jar` y quita el flag una vez.
 
 En cada arranque, el instalador compara `index.toml` con lo que el jugador
 tiene y descarga solo lo que cambió. Los mods y packs se bajan de la CDN de
