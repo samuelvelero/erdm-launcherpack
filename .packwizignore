@@ -97,3 +97,31 @@
 # publicación dentro de su carpeta de Minecraft.
 /README.md
 /actualizar-pack.ps1
+
+# ============================================================
+#  Estado por jugador y sobras (añadido 2026-08-22)
+# ============================================================
+# Reportes de fallos: se generan solos y no pintan nada en el pack.
+/crash-reports/
+
+# Cachés que los mods reconstruyen al vuelo.
+/config/shulkerboxtooltip_mp_ender_chest_cache.dat
+/config/itemswapper-server-cache.json.json
+
+# Ajustes personales: volúmenes por jugador y caché de nombres.
+/config/voicechat/player-volumes.properties
+/config/voicechat/username-cache.json
+
+# Waypoints, perfiles y minimapa de Xaero: son de cada jugador.
+/config/xaero/
+
+# Sobras de un mod de minimapa que ya no está instalado. Las configs no se
+# borran al desinstalar un mod, así que se colaban al pack sin que el mod
+# correspondiente existiera. Excluirlas es inofensivo: si algún día vuelves a
+# instalarlos, cada jugador genera la suya con los valores por defecto.
+/config/maplink/
+/config/immersiveminimaps.toml
+/config/compasstomapxaeros-common.toml
+/config/pingtomapxaeros-client.toml
+/config/surveyor.toml
+/config/hoofprint.toml

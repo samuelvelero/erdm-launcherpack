@@ -58,7 +58,7 @@ hash = "0f1e7df65dc4fcff84594a708ebed689598dd05dec4cfca38e9f807ca817c5c0"
 
 [[files]]
 file = "config/dreamdisplays/client-display-settings.json"
-hash = "019195ddf74ddcd9aba360a8451cdf0af03c5e1355b20d2c64806cb7b8d5802e"
+hash = "4348eff37a860dd27d521137597da7ae90c41f683d958ca32e17ac3b6cef5d16"
 
 [[files]]
 file = "config/dreamdisplays/config.toml"
@@ -186,7 +186,11 @@ hash = "a44027e5b5bf7106a7657a84978cbdb46b0d55ac9db0cf77636d4670c4ebfdc3"
 
 [[files]]
 file = "config/iris.properties"
-hash = "610e9c8d1c966a8101071fca2affd3cc5fdfe44db00c74bd2df2dac70957407b"
+hash = "b7cc9aee0ec9245d8362c46002420e6ef6f5c6089856cb59a85f282c865c9d87"
+
+[[files]]
+file = "config/itemswapper.json.json"
+hash = "f71f7deb48b0b2ac0386bf803e0ed1140966ade2351fde0679ada40b1bf43147"
 
 [[files]]
 file = "config/lambdynlights.toml"
@@ -257,6 +261,18 @@ file = "config/rrls.toml"
 hash = "9f2e3cc1cd587fd9de6fd4a068e4c247fde401d3fc6fd9a0da36627ddc5611a3"
 
 [[files]]
+file = "config/simple-rpc/server-entries.toml"
+hash = "c0f805a22438339d68aacf46339f6f9d47cd9737ab0a6e4c8af3b772f7028849"
+
+[[files]]
+file = "config/simple-rpc/simple-rpc.toml"
+hash = "11b7b6bda47ade10fa688af41c0c8191c696c45424b0668fc4e83d1baae5e1db"
+
+[[files]]
+file = "config/skyboxify.json"
+hash = "e2b79eaa90ce869352d461a779d2014aad3f954c8ed3dc8b8d921a2d3932afbf"
+
+[[files]]
 file = "config/smoothscroll.json"
 hash = "efa2507ea0c96cb2a55b298cf07d6e7cef5850bd4acea5b981e5b2c06e5cbb4b"
 
@@ -274,7 +290,7 @@ hash = "b627c4456e6fa0bc4b5f85e2f1cd949faedae3cb9afdaf2a5f52e6f3b6ae1f01"
 
 [[files]]
 file = "config/sodium-options.json"
-hash = "7d98966fef8784202c6acfcdf47d47c2b4bc1aaea006661120f3b5b10331ee94"
+hash = "c06fecae6a8f39d4f5efba120cbf02a6f2dbbe31c596b7ac1b20f6a70e9c21ec"
 
 [[files]]
 file = "config/sound_physics_remastered/occlusion.properties"
@@ -302,7 +318,7 @@ hash = "b6572f9ac6ab62067c26bfb695dfaa263609ac8955f855126eb79b9698b9d20f"
 
 [[files]]
 file = "config/subtle_effects/entities.toml"
-hash = "3e9788b1039b29c004d3b9b67b36213cdab0dbc8bb6a00952a9c8bcb8eef42ec"
+hash = "adc251dc27767c48754244aadb0bf49dc6c914e6327c8ad5f5c922503aa9dce2"
 
 [[files]]
 file = "config/subtle_effects/environment.toml"
@@ -323,6 +339,22 @@ hash = "60420a41571a4658b91babfa2b47d6fefb7c1766eeea969f51ff98ab34c2431c"
 [[files]]
 file = "config/trender.json"
 hash = "0a282f3623f7f9443a1d10b5768865f69e58b74e000dcfb4f40399626b7a6124"
+
+[[files]]
+file = "config/voicechat/category-volumes.properties"
+hash = "94c1c4f70e5b995fbd71e86d4fa646030437fecae0685875b560a55fbd0d0e56"
+
+[[files]]
+file = "config/voicechat/translations.properties"
+hash = "693643b1d393cbb3ea7f062afc4474fcd66e4036c4f8d7c056434979cbf512d1"
+
+[[files]]
+file = "config/voicechat/voicechat-client.properties"
+hash = "504e13f9f9603f191540d09f4d22ffc3f79545025064c5512b655440601e1682"
+
+[[files]]
+file = "config/voicechat/voicechat-server.properties"
+hash = "c6e0f5e382dd27abbd1db76f04dbd1fe631bc9d12d537c74bd5b6ecbd6f84024"
 
 [[files]]
 file = "config/xaerohud.txt"
@@ -441,6 +473,11 @@ hash = "d50f2abb71c8490d4a6cc09ae0af2192eb9df5dc0dcd1df789614d9c20b48e01"
 metafile = true
 
 [[files]]
+file = "mods/craterlib.pw.toml"
+hash = "a343e5c0b045765cb22b4bacc762ae1d28ff200ebca63f8abfdd9525da247ca5"
+metafile = true
+
+[[files]]
 file = "mods/cut-through.pw.toml"
 hash = "d5fe843d3fdd8997043e25d8f942b72d601de43cb4af3f28b28c265658c1623a"
 metafile = true
@@ -452,7 +489,7 @@ metafile = true
 
 [[files]]
 file = "mods/dreamdisplays.pw.toml"
-hash = "6e67018978e32a1483b92d567f172885f7896db39020e7645f644ce1badda632"
+hash = "f4b0f612e5298c714d64da6e3dd005f5b94cbeb868c969d5156ed7d1a386e925"
 metafile = true
 
 [[files]]
@@ -508,6 +545,11 @@ metafile = true
 [[files]]
 file = "mods/iris.pw.toml"
 hash = "fe0ae450b5a649af7d5ae328c78e50eca659e769a44b748003609f3a5e065761"
+metafile = true
+
+[[files]]
+file = "mods/itemswapper.pw.toml"
+hash = "ba3bc7c328bd0afc514bdfd21d6e1aebc8ce5c7be9b0f1ecc2124fe8913d34ba"
 metafile = true
 
 [[files]]
@@ -568,6 +610,11 @@ metafile = true
 [[files]]
 file = "mods/shulkerboxtooltip.pw.toml"
 hash = "e25c9d251077395d88291c9602eecb169322233548350656d76ffefd56eec911"
+metafile = true
+
+[[files]]
+file = "mods/simple-discord-rpc.pw.toml"
+hash = "234778f71b91f081ea4b9f3fb2e4d0634330c9cdad14064a1000828ae8cd3f4e"
 metafile = true
 
 [[files]]

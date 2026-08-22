@@ -87,7 +87,11 @@ $entradas = (Select-String -Path 'index.toml' -Pattern '^\[\[files\]\]' -AllMatc
 Write-Host "      $entradas archivos en el índice"
 
 # --- Red de seguridad 1: que no se cuele un binario en el repo ---
-$sospechosos = git ls-files --others --cached |
+# --exclude-standard es imprescindible: sin el, "git ls-files --others"
+# lista TAMBIEN los archivos ignorados, y esta comprobacion daba un falso
+# positivo con los 165 .jar y .zip que .gitignore excluye correctamente,
+# abortando la publicacion sin motivo alguno.
+$sospechosos = git ls-files --cached --others --exclude-standard |
     Where-Object { $_ -match '\.(jar|zip)$' -and $_ -notmatch 'bootstrap\.jar$' }
 if ($sospechosos) {
     Write-Warning "Hay binarios sin ignorar; revisa .gitignore antes de subir:"
@@ -102,8 +106,12 @@ if ($sospechosos) {
 # bootstrap auto-actualiza (el fallo aparecía semanas después, sin tocar nada).
 $indexados = Select-String -Path 'index.toml' -Pattern '^file = "(.+?)"' |
     ForEach-Object { $_.Matches[0].Groups[1].Value }
+# "git ls-files" a secas solo lista lo YA trackeado, y el "git add -A" ocurre
+# despues (paso 3), asi que cualquier archivo nuevo disparaba la alarma. Lo que
+# importa es lo que estara en el repo TRAS el add: trackeado + no ignorado.
 $enRepo = [System.Collections.Generic.HashSet[string]]::new(
-    [string[]](git ls-files), [System.StringComparer]::OrdinalIgnoreCase)
+    [string[]](git ls-files --cached --others --exclude-standard),
+    [System.StringComparer]::OrdinalIgnoreCase)
 $huerfanos = $indexados | Where-Object { -not $enRepo.Contains($_) }
 if ($huerfanos) {
     Write-Warning 'Estos archivos están en index.toml pero NO en el repositorio.'
@@ -112,6 +120,32 @@ if ($huerfanos) {
     return
 }
 Write-Host "      $($indexados.Count) archivos indexados, todos presentes en el repo"
+
+# --- Red de seguridad 3: cada metafile debe apuntar a un .jar que existe ---
+# Si actualizas un mod dejando caer el .jar nuevo a mano en vez de hacerlo desde
+# el gestor de Prism, el metadato se queda con la version vieja: tu juegas con la
+# nueva y publicas la antigua para todos, sin ningun aviso. Paso con DreamDisplays
+# (jar 1.9.3, metadato 1.9.1).
+$desfase = @()
+foreach ($f in Get-ChildItem -Path $modsDir -Filter '*.pw.toml' -File) {
+    $m = Select-String -Path $f.FullName -Pattern '^filename\s*=\s*[''"](.+?)[''"]' |
+         Select-Object -First 1
+    if ($m) {
+        $nombre = $m.Matches[0].Groups[1].Value
+        if (-not (Test-Path (Join-Path $modsDir $nombre))) {
+            $desfase += "  $($f.Name) apunta a '$nombre', que no existe en mods/"
+        }
+    }
+}
+if ($desfase) {
+    Write-Warning 'Hay metadatos desfasados respecto a los .jar de la carpeta.'
+    Write-Warning 'Publicarias una version distinta de la que tu estas jugando:'
+    $desfase | ForEach-Object { Write-Warning $_ }
+    Write-Warning 'Actualiza el mod desde el gestor de Prism, o corrige el metadato con:'
+    Write-Warning '  packwiz modrinth add --project-id <id> --version-id <id>'
+    return
+}
+Write-Host "      metadatos y .jar coinciden"
 
 # ------------------------------------------------------------------
 #  Paso 3: publicar

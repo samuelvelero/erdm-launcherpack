@@ -1,25 +1,13 @@
-filename = 'dreamdisplays-fabric-26.2-1.9.1.jar'
-name = 'Dream Displays'
-side = 'both'
-x-prismlauncher-loaders = [ 'quilt', 'fabric' ]
-x-prismlauncher-mc-versions = [ '26.2' ]
-x-prismlauncher-release-type = 'release'
-x-prismlauncher-version-number = '1.9.1'
+name = "Dream Displays"
+filename = "dreamdisplays-fabric-26.2-1.9.3.jar"
+side = "both"
 
 [download]
-hash = '24880bf3a85d578463a8e0275f40296d08d78380c10308e800c1652fe32dd5193e324fd7b709d862a8f363a7db785ae7af4cd4e11a30eb0988a0220a276d1ef6'
-hash-format = 'sha512'
-mode = 'url'
-url = 'https://cdn.modrinth.com/data/4IIKQyBu/versions/D1Tb169A/dreamdisplays-fabric-26.2-1.9.1.jar'
+url = "https://cdn.modrinth.com/data/4IIKQyBu/versions/VKeAtcIo/dreamdisplays-fabric-26.2-1.9.3.jar"
+hash-format = "sha512"
+hash = "88da8070327d4c2cf8dc2c8393a16aae31f3a080151b021cfe834ced6f438d3816f3f1d6e652305994f7834060c5bc7b1f76566319f4137853343706638cbb73"
 
+[update]
 [update.modrinth]
-mod-id = '4IIKQyBu'
-version = 'D1Tb169A'
-
-[[x-prismlauncher-dependencies]]
-addonId = 'P7dR8mSH'
-type = 'REQUIRED'
-
-[[x-prismlauncher-dependencies]]
-addonId = 'Vebnzrzj'
-type = 'OPTIONAL'
+mod-id = "4IIKQyBu"
+version = "VKeAtcIo"
