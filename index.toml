@@ -2,7 +2,7 @@ hash-format = "sha256"
 
 [[files]]
 file = "config/DistantHorizons.toml"
-hash = "ef48fba49a8dbeda2d8bbbd02e0b079854d1c7e321e3ef70bd6bd688d876c332"
+hash = "acf8f968f211cda2706957d6aa22e90134719ba3df5c4a7b4bdc9b55003bc5d6"
 
 [[files]]
 file = "config/MouseTweaks.cfg"
@@ -186,7 +186,7 @@ hash = "a44027e5b5bf7106a7657a84978cbdb46b0d55ac9db0cf77636d4670c4ebfdc3"
 
 [[files]]
 file = "config/iris.properties"
-hash = "b7cc9aee0ec9245d8362c46002420e6ef6f5c6089856cb59a85f282c865c9d87"
+hash = "5f233c5c1349340681340d4c2938b4605ef32db6d9addc4f06ad433e19d1e005"
 
 [[files]]
 file = "config/itemswapper.json.json"

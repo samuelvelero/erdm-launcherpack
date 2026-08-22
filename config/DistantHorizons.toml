@@ -323,7 +323,7 @@ _version = 4
 			# DEFAULT: Default lod renderer 
 			# DEBUG_TRIANGLE: Debug testing renderer 
 			# DISABLED: Disable rendering
-			rendererMode = "DEFAULT"
+			rendererMode = "DISABLED"
 			#
 			# If true overlapping quads will be rendered as bright red for easy identification. 
 			# If false the quads will be rendered normally.
@@ -771,7 +771,7 @@ _version = 4
 				# Note: this is a best effort number. 
 				# The actual render distance may be above or below this number 
 				# depending on your other graphic settings.
-				lodChunkRenderDistanceRadius = 128
+				lodChunkRenderDistanceRadius = 64
 				#
 				# How should the sides and bottom of grass block LODs render? 
 				# 
