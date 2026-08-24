@@ -36,6 +36,14 @@
 /resourcepacks/*.zip
 /shaderpacks/*.zip
 
+# Excepciones: estos dos jars NO están en Modrinth, así que el repo es
+# el único sitio de donde los jugadores pueden bajarlos.
+# El motivo largo está en .packwizignore, junto a las mismas dos líneas:
+# hay que mantener los dos ficheros en sintonía o packwiz indexa algo
+# que git no sube, y el pack queda roto con un 404 en el sync.
+!/mods/itemswapperfabric1.0.0beta.2mc26.2git.4e23d0fdirty.jar
+!/mods/erdmdodge-0.1.0.jar
+
 # Metadatos internos de Prism (ver nota en .packwizignore:
 # si se indexan desde aquí, los mods se instalan en la carpeta
 # equivocada y el juego arranca sin mods)

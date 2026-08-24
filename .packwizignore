@@ -28,6 +28,22 @@
 /resourcepacks/*.zip
 /shaderpacks/*.zip
 
+# --- Excepciones: jars que NO existen en Modrinth ---
+# Estos dos si viajan en el repo, porque no hay de donde bajarlos.
+#
+#   itemswapper...4e23d0f...dirty : build propio. El de Modrinth
+#     (git.518b04a) declara el entrypoint 'controlify' en su
+#     fabric.mod.json pero NO incluye la clase
+#     dev.tr7zw.itemswapper.compat.ControlifyItemswapperEntrypoint,
+#     asi que crashea con ClassNotFoundException en cuanto el jugador
+#     tenga Controlify instalado. Este build si la trae.
+#
+#   erdmdodge : mod propio del dash local. No esta publicado en ningun
+#     sitio. Quien no lo tenga sigue teniendo dash, calculado en el
+#     servidor; el plugin distingue los dos casos por si solo.
+!/mods/itemswapperfabric1.0.0beta.2mc26.2git.4e23d0fdirty.jar
+!/mods/erdmdodge-0.1.0.jar
+
 # --- Mundos y datos de partida (889 MB) ---
 /saves/
 /Distant_Horizons_server_data/

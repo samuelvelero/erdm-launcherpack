@@ -91,8 +91,22 @@ Write-Host "      $entradas archivos en el índice"
 # lista TAMBIEN los archivos ignorados, y esta comprobacion daba un falso
 # positivo con los 165 .jar y .zip que .gitignore excluye correctamente,
 # abortando la publicacion sin motivo alguno.
+#
+# Excepciones deliberadas: jars que SI viajan en el repo porque no existen en
+# Modrinth y este repositorio es el unico sitio de donde los jugadores pueden
+# bajarlos. Esta lista tiene que coincidir con las lineas "!" de .gitignore y
+# .packwizignore; si se cambia el nombre de un jar hay que tocar los tres
+# sitios, o la Red de seguridad 2 avisara de un huerfano.
+$binariosPermitidos = @(
+    'mods/itemswapperfabric1.0.0beta.2mc26.2git.4e23d0fdirty.jar',
+    'mods/erdmdodge-0.1.0.jar'
+)
 $sospechosos = git ls-files --cached --others --exclude-standard |
-    Where-Object { $_ -match '\.(jar|zip)$' -and $_ -notmatch 'bootstrap\.jar$' }
+    Where-Object {
+        $_ -match '\.(jar|zip)$' -and
+        $_ -notmatch 'bootstrap\.jar$' -and
+        $binariosPermitidos -notcontains $_
+    }
 if ($sospechosos) {
     Write-Warning "Hay binarios sin ignorar; revisa .gitignore antes de subir:"
     $sospechosos | ForEach-Object { Write-Warning "  $_" }

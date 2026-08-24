@@ -58,7 +58,7 @@ hash = "0f1e7df65dc4fcff84594a708ebed689598dd05dec4cfca38e9f807ca817c5c0"
 
 [[files]]
 file = "config/dreamdisplays/client-display-settings.json"
-hash = "4348eff37a860dd27d521137597da7ae90c41f683d958ca32e17ac3b6cef5d16"
+hash = "e835c6624e59fa23ba9719c51ad53aae51cd97f38e88c8a3e50b0c265a3f6ec2"
 
 [[files]]
 file = "config/dreamdisplays/config.toml"
@@ -186,7 +186,15 @@ hash = "a44027e5b5bf7106a7657a84978cbdb46b0d55ac9db0cf77636d4670c4ebfdc3"
 
 [[files]]
 file = "config/iris.properties"
-hash = "5f233c5c1349340681340d4c2938b4605ef32db6d9addc4f06ad433e19d1e005"
+hash = "016cf07443de34f7c58a601d20fa126736c9b669013dd69f0533967e431782c5"
+
+[[files]]
+file = "config/itemswapper-server-cache.json"
+hash = "4dbbc3a53c61363de3a175980faa30d684da945c8175945f788236f9f9f03c4d"
+
+[[files]]
+file = "config/itemswapper.json"
+hash = "f71f7deb48b0b2ac0386bf803e0ed1140966ade2351fde0679ada40b1bf43147"
 
 [[files]]
 file = "config/itemswapper.json.json"
@@ -513,8 +521,12 @@ hash = "9f4d8c48f85df2dcd52aad31bc15a745f9011b5c106a9bee813c50dd49f9bc38"
 metafile = true
 
 [[files]]
+file = "mods/erdmdodge-0.1.0.jar"
+hash = "f0472daa2bfe0e11c5b1ce97544b6ceb30bd7f7e0dcb5620ea4d299da1d2e01e"
+
+[[files]]
 file = "mods/fabric-api.pw.toml"
-hash = "c2115151d714399ccd9b33150857ae3e4644c7dba66cbe4e50359f40493605ed"
+hash = "7ed424f5ce1febe2c2c0e5fc58d34858f1bbd97eabdceb9b9c6afdde4bf578df"
 metafile = true
 
 [[files]]
@@ -548,9 +560,8 @@ hash = "fe0ae450b5a649af7d5ae328c78e50eca659e769a44b748003609f3a5e065761"
 metafile = true
 
 [[files]]
-file = "mods/itemswapper.pw.toml"
-hash = "ba3bc7c328bd0afc514bdfd21d6e1aebc8ce5c7be9b0f1ecc2124fe8913d34ba"
-metafile = true
+file = "mods/itemswapperfabric1.0.0beta.2mc26.2git.4e23d0fdirty.jar"
+hash = "adc77e5c7fbf8f8e3901d9ab24a457052a457d3e3f4f46fb1dcb1766dde6fb3d"
 
 [[files]]
 file = "mods/lambdynamiclights.pw.toml"
