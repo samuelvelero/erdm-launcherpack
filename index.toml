@@ -186,7 +186,7 @@ hash = "a44027e5b5bf7106a7657a84978cbdb46b0d55ac9db0cf77636d4670c4ebfdc3"
 
 [[files]]
 file = "config/iris.properties"
-hash = "016cf07443de34f7c58a601d20fa126736c9b669013dd69f0533967e431782c5"
+hash = "006463a77db65cc341781ce13b2a0015a962d976e13441ca428559fef5ad542d"
 
 [[files]]
 file = "config/itemswapper-server-cache.json"
@@ -326,7 +326,7 @@ hash = "b6572f9ac6ab62067c26bfb695dfaa263609ac8955f855126eb79b9698b9d20f"
 
 [[files]]
 file = "config/subtle_effects/entities.toml"
-hash = "adc251dc27767c48754244aadb0bf49dc6c914e6327c8ad5f5c922503aa9dce2"
+hash = "44808ff4730b5d527b7a520a2ec732cbf996bdfa823bd3210a000621e4881c46"
 
 [[files]]
 file = "config/subtle_effects/environment.toml"
@@ -521,8 +521,8 @@ hash = "9f4d8c48f85df2dcd52aad31bc15a745f9011b5c106a9bee813c50dd49f9bc38"
 metafile = true
 
 [[files]]
-file = "mods/erdmdodge-0.1.0.jar"
-hash = "f0472daa2bfe0e11c5b1ce97544b6ceb30bd7f7e0dcb5620ea4d299da1d2e01e"
+file = "mods/erdmdodge-0.1.1.jar"
+hash = "45e31803d30a7c2091b6f0edae7ecbb629df8d44251b997d511c65afce97f677"
 
 [[files]]
 file = "mods/fabric-api.pw.toml"

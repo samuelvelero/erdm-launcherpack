@@ -89,7 +89,7 @@ mobFell = true
 landMaceAttack = true
 playerRunning = true
 mobRunning = true
-playerRunningRequiresSpeed = false
+playerRunningRequiresSpeed = true
 
 [burning]
 smokeType = "DEFAULT"

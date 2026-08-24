@@ -99,7 +99,7 @@ Write-Host "      $entradas archivos en el índice"
 # sitios, o la Red de seguridad 2 avisara de un huerfano.
 $binariosPermitidos = @(
     'mods/itemswapperfabric1.0.0beta.2mc26.2git.4e23d0fdirty.jar',
-    'mods/erdmdodge-0.1.0.jar'
+    'mods/erdmdodge-0.1.1.jar'
 )
 $sospechosos = git ls-files --cached --others --exclude-standard |
     Where-Object {
