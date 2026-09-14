@@ -69,6 +69,12 @@ presence-footsteps
 paper-doll
 resourcify
 
+# --- Detectado jugando en Esencial (14-sep-2026) -------------
+# Samukis abrió el juego en Esencial y se encontró efectos de clima
+# que no había pedido. Es puramente atmosférico, mismo criterio que
+# atmospherics y wakes.
+immersive-storms
+
 # --- chatanimation: sigue sin existir en el pack -------------
 # Se borró en el mismo saneamiento y no se ha recuperado. Si vuelve,
 # añadir su línea aquí.
@@ -98,17 +104,34 @@ resourcify
 #
 #  OJO: esto se invirtió el 13-sep-2026. Antes salían los 17 de
 #  Esencial ("son puramente decorativos"). Samukis lo corrigió: solo
-#  estos dos salen, y "los demás resourcepacks sí" van en Esencial.
+#  dos salían, y "los demás resourcepacks sí" iban en Esencial.
 #
-#  Es decir, Esencial SÍ lleva Fresh Animations y sus 7 extensiones,
-#  Bare Bones, Bare Skies, Enchant Icons, Even Better Enchants,
-#  Glowing Glints, Low on Fire, Low Shield, Simple Grass Flowers,
-#  3D Harnesses y Visual Shulker Labels.
+#  Corregido otra vez el 14-sep-2026, viendo el juego correr en
+#  Esencial: Fresh Animations y su familia daban animaciones de
+#  zombi que no pintan nada en la versión "en estado puro". Ahora
+#  toda la familia FA + Simple Grass Flowers salen de Esencial.
+#
+#  Esencial SÍ sigue llevando: Bare Skies, Low on Fire, Low Shield,
+#  Enhanced Audio, Sodium Translations y Visual Shulker Labels.
 # ============================================================
 [solo-graficos-resourcepacks]
 
 better-leaves
 default-dark-mode
+
+# --- Familia Fresh Animations (sacada de Esencial el 14-sep-2026) ---
+# El pack base y sus extensiones. Las de Classic Horses y Creepers ya
+# no están: se retiraron del pack entero ese mismo día, junto con
+# Enchant Icons, Even Better Enchants, Enchantment Outlines, Bare Bones
+# y 3D Harnesses.
+fresh-animations
+fresh-animations-extensions
+fresh-animations-details
+fresh-animations-objects
+fresh-animations-quivers
+fa-player-extension
+
+simple-grass-flowers
 
 # --- Decidido: en ambos perfiles, sin aplicar por defecto ------
 # "Visual Shulker Labels" va en ambos perfiles (confirmado por Samukis,

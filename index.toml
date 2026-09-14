@@ -454,7 +454,7 @@ hash = "82caee9b1f532332c798ee216c9a9ba5857c35e58afacba44946d9264fc05b36"
 
 [[files]]
 file = "erdm-perfiles.txt"
-hash = "9e6d93435e3ca203de84506c94afb47daff3a39d779a79ec2c2506206f4249fd"
+hash = "e465658389fe4859a262c9fba47af001d0a57684c96571ad5f52f1c3af9d9e3d"
 
 [[files]]
 file = "mods/advancements-fullscreen.pw.toml"
@@ -655,7 +655,7 @@ metafile = true
 
 [[files]]
 file = "mods/immersive-storms.pw.toml"
-hash = "011d7fa5384b8bab7687f534546c22709d2d8b705b49fabd1a1c1d0542ef5a7c"
+hash = "5395a34b940a019666d0b3c3a009df844bc79333ded7b68b40ead80e6cc93e08"
 metafile = true
 
 [[files]]
@@ -793,11 +793,6 @@ hash = "234778f71b91f081ea4b9f3fb2e4d0634330c9cdad14064a1000828ae8cd3f4e"
 metafile = true
 
 [[files]]
-file = "mods/simple-mod-manager.pw.toml"
-hash = "22d86ba8dac24c58f4e7c60c0c6def0544c23d7ab42c0704f24f8f591e4c8eda"
-metafile = true
-
-[[files]]
 file = "mods/simple-shulker-preview.pw.toml"
 hash = "e349b0a8a9387410440c9c4f3b5b1cfa82f2620f8f73cc461cd7e944d1c085c1"
 metafile = true
@@ -881,18 +876,8 @@ hash = "2d3f8b8f446b9ec2b9af2dfd1ef72c373f375aa9eb34d70ab09a594185bbe140"
 metafile = true
 
 [[files]]
-file = "resourcepacks/3d-harnesses-x-fresh-animations.pw.toml"
-hash = "257a86176d79912695eae58044ad33c8d3b28c5b6428dd1d29c1be3ad731e6fe"
-metafile = true
-
-[[files]]
 file = "resourcepacks/Visual Shulker Labels.zip"
 hash = "67b3df19fe312287a9a9876aaaa3e75223cd95b7dad6b366ab8ef9bd3023f240"
-
-[[files]]
-file = "resourcepacks/bare-bones.pw.toml"
-hash = "4e07890bec25eadb6a671528dce288e5017f427191b178cb8d6373df192c4d6e"
-metafile = true
 
 [[files]]
 file = "resourcepacks/bare-skies.pw.toml"
@@ -910,58 +895,33 @@ hash = "15f49af3473976e6f71458d0cb11ee84bdfef69d1dfdc4905815346f08cd3d9a"
 metafile = true
 
 [[files]]
-file = "resourcepacks/enchant-icons-countxd.pw.toml"
-hash = "d5683729a4b1cbca16caeda182433ab3fed68b002d82d3fbfa673367175db6e6"
-metafile = true
-
-[[files]]
-file = "resourcepacks/even-better-enchants.pw.toml"
-hash = "26c0e4a143ee9c0aa5c257996a7efba141c30674f2b0209af5c263c36db555ea"
-metafile = true
-
-[[files]]
 file = "resourcepacks/fa-player-extension.pw.toml"
-hash = "2e1a6866e4366cebe200dcf71ab52923b7653f76dc48741b93411ee3bf77372a"
-metafile = true
-
-[[files]]
-file = "resourcepacks/fresh-animations-classic-horses.pw.toml"
-hash = "2f3207a5d3530e7dfe97cdd16dd72d31dae83faa7cca04aaeb75711c1bbaa02d"
-metafile = true
-
-[[files]]
-file = "resourcepacks/fresh-animations-creepers.pw.toml"
-hash = "7913ccc031786220b0d2226389d2f034369183572e7071e5d7612b442359f130"
+hash = "5a7dbc5d4e303f2d1cefd082b6f1fe225ba21c803f66c185b1544ca6152a22bb"
 metafile = true
 
 [[files]]
 file = "resourcepacks/fresh-animations-details.pw.toml"
-hash = "76fac76ecfa8369e351fd6892174112bbd46f1806a79d569d239e171d6b21bf5"
+hash = "f4cbf7229f58d6e5a0ff767886340233f891849dd4dd5529f1d09f34cd1c6d80"
 metafile = true
 
 [[files]]
 file = "resourcepacks/fresh-animations-extensions.pw.toml"
-hash = "739f03f8af2fa7746886d62e7f3ea25a773b5775c74b2b7a47a776510d7e11de"
+hash = "0da5fbd23b922d8483b08e0d0be98b1aba524020851c3ad6e713fc96155baf5b"
 metafile = true
 
 [[files]]
 file = "resourcepacks/fresh-animations-objects.pw.toml"
-hash = "d46d25e5eb08ca03367924784ed88301f53381aa1c581c5510de8deb25f19e0a"
+hash = "1014038abf8409a21465c1dad3f40de2e3b17c56ae3c47f826a5f1880573ea6c"
 metafile = true
 
 [[files]]
 file = "resourcepacks/fresh-animations-quivers.pw.toml"
-hash = "a516f14bbde45f128086050dd497a5747bfc42e4b2dbe4bb8150c9a126a30eb7"
+hash = "9290c60d18cc6401cdf877bb85f473707216463175aa74722db47957a1d512c3"
 metafile = true
 
 [[files]]
 file = "resourcepacks/fresh-animations.pw.toml"
-hash = "213428b7676adfaa1c59fcfe93e6e7f3d0257e236f32a5a245eb0fc966e1b218"
-metafile = true
-
-[[files]]
-file = "resourcepacks/glowing-glints.pw.toml"
-hash = "5f333fc7dde708f632bed4a2fcf315e5d6c6f75ff06b537f5cd1f1c5d764a002"
+hash = "3619090ecf32c33ebbe8e51ac814ca4fa00f86799e2b7948405f23adaa2e0438"
 metafile = true
 
 [[files]]
@@ -976,7 +936,7 @@ metafile = true
 
 [[files]]
 file = "resourcepacks/simple-grass-flowers.pw.toml"
-hash = "6576e0f2a199e626872973b61fa925d6055c90442901e88e705815d1ef48888d"
+hash = "504b6212ca230cbc3a4c092cf5ab5a0e59f86e19cfd622267c69dfc4b5d3fb6d"
 metafile = true
 
 [[files]]

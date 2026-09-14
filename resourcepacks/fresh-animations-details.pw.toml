@@ -11,3 +11,8 @@ hash = "01b76ec5c66710bd035f2805de668db4745b866744093f4b9c8517b28e70c7dc1cf3935a
 [update.modrinth]
 mod-id = "lctgpCsu"
 version = "qZUQ2JxK"
+
+[option]
+optional = true
+description = "Fresh Animations: Details. Solo en Gráficos Sofisticados."
+default = false

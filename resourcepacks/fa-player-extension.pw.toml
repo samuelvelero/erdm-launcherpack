@@ -11,3 +11,8 @@ hash = "d2a5c46ae53e4bb6355604a1ade253ab49f1deb205f5ee69085014965241d3c962320495
 [update.modrinth]
 mod-id = "TAIMVZCL"
 version = "Wj7NeGjP"
+
+[option]
+optional = true
+description = "Fresh Animations: Player Extension. Solo en Gráficos Sofisticados."
+default = false

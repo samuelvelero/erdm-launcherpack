@@ -11,3 +11,8 @@ hash = "3c4ab508aba2bbb79b5d73caa7bac77f2caca075dbe09f64f8af35851ae04a41d81973a2
 [update.modrinth]
 mod-id = "YAVTU8mK"
 version = "R5ZGSF8A"
+
+[option]
+optional = true
+description = "Fresh Animations: Extensions. Solo en Gráficos Sofisticados."
+default = false
