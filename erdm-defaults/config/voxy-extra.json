@@ -12,7 +12,7 @@
   "disableInSingleplayer": true,
   "replayModSaveCustomMeta": true,
   "replayModLoadLods": true,
-  "customFogFade": false,
-  "fadeFogStart": 0,
-  "fadeFogEnd": 300
+  "customFogFade": true,
+  "fadeFogStart": 2,
+  "fadeFogEnd": 100
 }

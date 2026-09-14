@@ -369,6 +369,10 @@ file = "erdm-defaults/config/smoothscroll.json"
 hash = "a80d6da855cc780a433b955ca6e6c4b142c3f216c724c921563d1c7ec8666022"
 
 [[files]]
+file = "erdm-defaults/config/sodium-extra-options.json"
+hash = "37a145d04d6b735594377bd1f39486b16673fb0d2a25aeae4b30f0a46c6fb51c"
+
+[[files]]
 file = "erdm-defaults/config/sodium-mixins.properties"
 hash = "b627c4456e6fa0bc4b5f85e2f1cd949faedae3cb9afdaf2a5f52e6f3b6ae1f01"
 
@@ -438,7 +442,7 @@ hash = "92cf467e273fe87bb6b9ec6f184f1a7dbecb714723ceb5494a438dcc3cb4afec"
 
 [[files]]
 file = "erdm-defaults/config/voxy-extra.json"
-hash = "ab81d40a85232ec2d9c66e0eaf9802f4750b8d12789cca1850c75dc608dc104d"
+hash = "f06a262cc7aec54fa0466ba94ea26cc51c67d8be7b2f6d7bc14acf1aaf1c8646"
 
 [[files]]
 file = "erdm-defaults/config/wakes.json"

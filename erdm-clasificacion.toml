@@ -26,9 +26,19 @@
 
 # --- Ajustes por máquina (GPU, mando, shader elegido) ----------
 sodium-options.json
-sodium-extra-options.json
 sodium-extra.properties
 iris.properties
+
+# NOTA (14-sep-2026): sodium-extra-options.json SALIÓ de esta lista.
+# Estaba aquí por vecindad con sodium-options.json, pero leyendo su
+# contenido no tiene ni un solo ajuste de máquina: son preferencias
+# visuales (animaciones, partículas, niebla, overlay de FPS, toasts).
+# Lo de verdad dependiente del hardware vive en sodium-options.json
+# (chunk_builder_threads, backend de render) y sodium-extra.properties
+# está literalmente vacío salvo un aviso de "solo para depurar".
+# Pasa a semilla para poder distribuir el default de niebla desactivada
+# (Voxy ya gestiona la niebla, ver erdm-defaults/config/voxy-extra.json).
+# Como es semilla y no [forzado], quien la haya personalizado la conserva.
 controlify/controlify.json
 controlify/profile-1.json
 
