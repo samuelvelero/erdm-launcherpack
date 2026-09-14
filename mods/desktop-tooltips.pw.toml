@@ -1,0 +1,13 @@
+name = "Desktop Tooltips"
+filename = "desktoptooltips-1.0.0.jar"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/samuelvelero/erdm-launcherpack/main/mods/desktoptooltips-1.0.0.jar"
+hash-format = "sha512"
+hash = "25b5525d855453286bd374547b1d377add358624aa58888e008317b75f45478c661842d35ebe196696762c4c7423fda0eb14f9811dd4e4aeb09db4562c369537"
+
+[option]
+optional = true
+description = "Leyenda de teclas estilo Fortnite sobre el HUD. Solo en Gráficos Sofisticados."
+default = false

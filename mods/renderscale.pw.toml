@@ -1,0 +1,25 @@
+filename = 'renderscale-1.4.0-alpha.4-fabric+26.2.jar'
+name = 'RenderScale'
+side = 'client'
+x-prismlauncher-loaders = [ 'fabric' ]
+x-prismlauncher-mc-versions = [ '26.2' ]
+x-prismlauncher-release-type = 'beta'
+x-prismlauncher-version-number = '1.4.0-alpha.4-fabric+26.2'
+
+[download]
+hash = 'db6eafa555c976144fec345d40a581119bbc4f105d5bbd1805da1a279bde6d955f02408a5ab0fed702b9df3f1b4ae278583ed217147db5b1399eab2ea657f288'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/Va8PJBFX/versions/EJ7KZw6k/renderscale-1.4.0-alpha.4-fabric%2B26.2.jar'
+
+[update.modrinth]
+mod-id = 'Va8PJBFX'
+version = 'EJ7KZw6k'
+
+[[x-prismlauncher-dependencies]]
+addonId = 'P7dR8mSH'
+type = 'REQUIRED'
+
+[[x-prismlauncher-dependencies]]
+addonId = '9s6osm5g'
+type = 'REQUIRED'

@@ -1,0 +1,18 @@
+filename = 'rpc-1.2.7+26.1-26.2.jar'
+name = 'ResourcePackCached'
+side = 'client'
+x-prismlauncher-dependencies = []
+x-prismlauncher-loaders = [ 'fabric' ]
+x-prismlauncher-mc-versions = [ '26.1', '26.1.1', '26.1.2', '26.2' ]
+x-prismlauncher-release-type = 'release'
+x-prismlauncher-version-number = '1.2.7'
+
+[download]
+hash = '986b50c766456a6f1c07a7923486fe34f04acff38753ffd36b7044479de5e5aba4a1c4d78852c004bef7ab510786ba7384ee921a4d5d69eed31b7fe518b2567d'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/d4phKsx2/versions/fYBMerql/rpc-1.2.7%2B26.1-26.2.jar'
+
+[update.modrinth]
+mod-id = 'd4phKsx2'
+version = 'fYBMerql'

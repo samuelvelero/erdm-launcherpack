@@ -1,0 +1,18 @@
+filename = 'advancements_search-mc26.2+1.3.jar'
+name = 'Advancements Search'
+side = 'client'
+x-prismlauncher-dependencies = []
+x-prismlauncher-loaders = [ 'fabric' ]
+x-prismlauncher-mc-versions = [ '26.2' ]
+x-prismlauncher-release-type = 'release'
+x-prismlauncher-version-number = '1.3'
+
+[download]
+hash = '4909eef5a1a74016e5344408e34c1675adb2775e470bee9d0e767302f668981b3ce4c2ab0c431ce98cfc4718d9d9705fa51cf255d2bd380ba5122499054e2a9b'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/Ccho67RI/versions/v8fs0Kaj/advancements_search-mc26.2%2B1.3.jar'
+
+[update.modrinth]
+mod-id = 'Ccho67RI'
+version = 'v8fs0Kaj'

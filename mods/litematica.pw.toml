@@ -1,0 +1,21 @@
+filename = 'litematica-fabric-26.2-0.28.5.jar'
+name = 'Litematica'
+side = 'client'
+x-prismlauncher-loaders = [ 'fabric' ]
+x-prismlauncher-mc-versions = [ '26.2' ]
+x-prismlauncher-release-type = 'release'
+x-prismlauncher-version-number = '0.28.5'
+
+[download]
+hash = 'af988f57e934047848ad29607492479394cef69e7516c0492cc37907cedbfec1b3fb8cbf4e089872d20ce1039d2d592ceb459113ee7135401f91038ceb101097'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/bEpr0Arc/versions/Fhq3KCI8/litematica-fabric-26.2-0.28.5.jar'
+
+[update.modrinth]
+mod-id = 'bEpr0Arc'
+version = 'Fhq3KCI8'
+
+[[x-prismlauncher-dependencies]]
+addonId = 'GcWjdA9I'
+type = 'REQUIRED'

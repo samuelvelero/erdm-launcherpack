@@ -1,0 +1,7 @@
+#Support dragging the mouse while holding an item with contents to insert hovered items, or to extract contents to empty hovered slots.
+#Default Value: true
+enable_mouse_dragging = true
+#Support moving only a single item from item contents instead of the whole item stack from the selected slot when clicking while a modifier key is held.
+#The scroll wheel can also be used for moving items even more quickly.
+#Default Value: true
+enable_single_item_movement = true

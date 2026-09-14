@@ -1,0 +1,18 @@
+filename = 'unhidden_advancements-fabric-26.x-1.0.0.jar'
+name = 'Unhidden Advancements'
+side = 'client'
+x-prismlauncher-dependencies = []
+x-prismlauncher-loaders = [ 'fabric' ]
+x-prismlauncher-mc-versions = [ '26.1', '26.1.1', '26.1.2', '26.2' ]
+x-prismlauncher-release-type = 'release'
+x-prismlauncher-version-number = 'fabric-26.x-1.0.0'
+
+[download]
+hash = 'b1bb8f43ce25912cb6ccee16e9f2b8e05187737d5d3bce416903bd27f9b5b6e7647503264a7b45c1c13bc9c2469bbc81bfac9133ede9d0b722522e77f0cc06be'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/5pz118bK/versions/gRWovLZj/unhidden_advancements-fabric-26.x-1.0.0.jar'
+
+[update.modrinth]
+mod-id = '5pz118bK'
+version = 'gRWovLZj'

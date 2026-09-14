@@ -21,10 +21,23 @@
 
 # --- Readmitir las carpetas distribuidas ---
 !/mods/
-!/config/
 !/resourcepacks/
 !/shaderpacks/
 !/emotes/
+!/erdm-defaults/
+!/erdm-clasificacion.toml
+!/erdm-perfiles.txt
+
+# config/ YA NO se rastrea directamente (cambio del 13-sep-2026).
+# Es el mecanismo antiguo: cada partida ensuciaba config/ (timestamps,
+# estado sin clasificar) y actualizar-pack.ps1 lo publicaba sin querer
+# con "git add -A". Ahora config/ es solo la carpeta de trabajo local
+# de Prism; lo que de verdad se versiona y se distribuye es
+# erdm-defaults/config/, que se actualiza a propósito con
+# poblar-defaults.ps1 cuando Samukis decide congelar nuevos defaults.
+# El resto de exclusiones de /config/... más abajo ya no se disparan
+# (nada bajo config/ está readmitido), se dejan por si algún día vuelve
+# a rastrearse.
 
 # ============================================================
 #  Exclusiones dentro de las carpetas readmitidas
@@ -36,13 +49,28 @@
 /resourcepacks/*.zip
 /shaderpacks/*.zip
 
-# Excepciones: estos dos jars NO están en Modrinth, así que el repo es
+# Ajustes personales de shader (BLOOM, TAA, etc. — igual que
+# iris.properties): cada jugador genera el suyo, no se distribuye.
+/shaderpacks/*.zip.txt
+
+# Excepciones: estos jars NO están en Modrinth (o no hay build para
+# MC 26.2 todavia), así que el repo es
 # el único sitio de donde los jugadores pueden bajarlos.
-# El motivo largo está en .packwizignore, junto a las mismas dos líneas:
+# El motivo largo está en .packwizignore, junto a las mismas líneas:
 # hay que mantener los dos ficheros en sintonía o packwiz indexa algo
 # que git no sube, y el pack queda roto con un 404 en el sync.
-!/mods/itemswapperfabric1.0.0beta.2mc26.2git.4e23d0fdirty.jar
-!/mods/erdmdodge-0.1.1.jar
+!/mods/itemswapperfabric*.jar
+!/mods/erdmdodge-*.jar
+!/mods/hoofprint-*.jar
+!/mods/surveyor*.jar
+!/mods/desktoptooltips-*.jar
+!/mods/spyglass_improvements-*.jar
+!/mods/erdmlauncherui-*.jar
+
+# Idem para resourcepacks: "Visual Shulker Labels" es un puerto propio a
+# pack_format 88 (MC 26.2). El oficial de Modrinth solo llega a pack_format
+# 64 (hasta 1.21.8), así que no es intercambiable con el download oficial.
+!/resourcepacks/Visual Shulker Labels.zip
 
 # Metadatos internos de Prism (ver nota en .packwizignore:
 # si se indexan desde aquí, los mods se instalan en la carpeta
@@ -54,6 +82,13 @@
 /config/dreamdisplays/yt-cache/
 /config/dreamdisplays/watched-videos.json
 /config/dreamdisplays/fullscreen-sessions.json
+
+# Render Scale (super_resolution): DLLs de AMD FSR + cachés de shader
+# compilado (.spv), específicos de la GPU de cada máquina. 43 MB en esta
+# instancia. Sin esto, packwiz distribuiría binarios de una GPU concreta
+# a todo el mundo — inútil para unos, puede crashear en otros. El mod
+# los regenera solo en el primer arranque, igual que DreamDisplays.
+/config/super_resolution/
 
 # Estado local de cada jugador
 /config/sodium-fingerprint.json

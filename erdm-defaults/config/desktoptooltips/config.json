@@ -1,0 +1,77 @@
+{
+  "configVersion": 1,
+  "enabled": true,
+  "anchor": "BOTTOM_RIGHT",
+  "direction": "HORIZONTAL",
+  "marginX": 6,
+  "marginY": 6,
+  "spacing": 4,
+  "scale": 0.75,
+  "iconSize": 22,
+  "showKeyBadge": true,
+  "showSlotBackground": true,
+  "showLabels": true,
+  "hideUnbound": false,
+  "hideWhenScreenOpen": true,
+  "hideInSpectator": true,
+  "highlightWhenPressed": false,
+  "labelColor": "#FFFFFFFF",
+  "slotBackgroundColor": "#70000000",
+  "slotBorderColor": "#A0FFFFFF",
+  "badgeBackgroundColor": "#C8101010",
+  "badgeBorderColor": "#FFE0E0E0",
+  "badgeTextColor": "#FFFFFFFF",
+  "highlightColor": "#FFFFD24A",
+  "entries": [
+    {
+      "keyId": "key.mute_microphone",
+      "label": "Silenciarse",
+      "icon": "",
+      "shape": "NONE",
+      "accentColor": "",
+      "enabled": true,
+      "showLabel": true,
+      "keyLabel": ""
+    },
+    {
+      "keyId": "key.emotecraft.fastchoose",
+      "label": "Emotes",
+      "icon": "",
+      "shape": "NONE",
+      "accentColor": "",
+      "enabled": true,
+      "showLabel": true,
+      "keyLabel": ""
+    },
+    {
+      "keyId": "key.spyglass-improvements.use",
+      "label": "Zoom",
+      "icon": "item:minecraft:spyglass",
+      "shape": "NONE",
+      "accentColor": "",
+      "enabled": true,
+      "showLabel": true,
+      "keyLabel": ""
+    },
+    {
+      "keyId": "key.hoofprint.open",
+      "label": "Mapa",
+      "icon": "item:minecraft:filled_map",
+      "shape": "ROUNDED",
+      "accentColor": "",
+      "enabled": true,
+      "showLabel": true,
+      "keyLabel": ""
+    },
+    {
+      "keyId": "key.itemswapper.itemswitcher",
+      "label": "Switch",
+      "icon": "",
+      "shape": "ROUNDED",
+      "accentColor": "",
+      "enabled": true,
+      "showLabel": true,
+      "keyLabel": ""
+    }
+  ]
+}

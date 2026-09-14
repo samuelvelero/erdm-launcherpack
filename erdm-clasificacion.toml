@@ -1,0 +1,196 @@
+# ============================================================
+#  erdm-clasificacion.toml — qué se hace con cada config
+#
+#  Postura por defecto: TODO lo que no aparezca aquí es SEMILLA.
+#  Semilla = se copia si el jugador no lo tiene, se actualiza si
+#  no lo tocó, y NUNCA se pisa si lo personalizó. Es el modo seguro;
+#  por eso solo hace falta listar las excepciones.
+#
+#  [fuera]    — no lo gestiona el pack. Puede ser: estado personal
+#               (una preferencia de máquina, de mundo, de servidor
+#               guardado), una caché que el mod regenera solo, o un
+#               archivo huérfano de un mod que ya no está instalado.
+#               El script de siembra no lo toca en ningún sentido.
+#
+#  [forzado]  — se sobrescribe siempre con el valor del pack, igual
+#               que hoy. Reservado para lo que rompe la compatibilidad
+#               con el servidor si el jugador lo cambia (fecha límite:
+#               solo lo estrictamente necesario, cuanto más forzado
+#               hay, más se repite el problema que origina este archivo).
+#
+#  Sintaxis: una ruta por línea bajo cada sección, relativa a config/.
+#  Comentarios con #.
+# ============================================================
+
+[fuera]
+
+# --- Ajustes por máquina (GPU, mando, shader elegido) ----------
+sodium-options.json
+sodium-extra-options.json
+sodium-extra.properties
+iris.properties
+controlify/controlify.json
+controlify/profile-1.json
+
+# --- Estado por mundo/servidor ----------------------------------
+litematica.json
+litematica/litematica_54.39.173.193_25598.json
+litematica/litematica_54.39.173.193_25598_dim_minecraft_overworld.json
+litematica/litematica_54.39.173.193_25598_dim_minecraft_the_end.json
+litematica/litematica_54.39.173.193_25598_dim_minecraft_the_nether.json
+litematica/litematica_Mundo nuevo.json
+litematica/litematica_Mundo nuevo_dim_minecraft_overworld.json
+
+# --- Cachés que el propio mod regenera ---------------------------
+itemswapper-server-cache.json
+schematicpreview_cache.json
+startuptimer.json
+simplemodmanager_state.json
+rpc-data.json
+vss-client-config.json
+
+# --- Archivos propios del mod (idiomas, documentación) -----------
+dreamdisplays/lang/be.json
+dreamdisplays/lang/cs.json
+dreamdisplays/lang/de.json
+dreamdisplays/lang/en.json
+dreamdisplays/lang/es.json
+dreamdisplays/lang/fr.json
+dreamdisplays/lang/he.json
+dreamdisplays/lang/it.json
+dreamdisplays/lang/pl.json
+dreamdisplays/lang/ru.json
+dreamdisplays/lang/uk.json
+dreamdisplays/client-display-settings.json
+NoChatReports/README.md
+voicechat/translations.properties
+
+# --- Huérfanos: mods retirados en el saneamiento de TST2 (12-sep) ---
+# El .jar ya no existe; estos archivos se quedaron sueltos en config/.
+# No se borran solos (podría ser el jugador quien los reinstale más
+# adelante), pero el pack deja de tocarlos.
+chatanimation.json
+cosycritters.json
+punchy/merged_animation_selection.json
+punchy/punchy_config.json
+punchy/triggerable-keybindings.json
+
+# --- Revisión del 13-sep-2026: cachés/estado que el propio cliente
+#     genera al conectarse, no un ajuste que el pack deba empujar ---
+#
+#   NCR-ServerPreferences.json : contenido real, {"signingModes": {}}.
+#     El nombre lo delata -- "Preferences" que NoChatReports detecta y
+#     guarda POR SERVIDOR al conectarse, no algo que el pack fije de
+#     antemano. Forzarlo no protege nada: en cuanto el jugador se
+#     conecta, el propio mod lo vuelve a escribir según lo que el
+#     servidor real le diga.
+NoChatReports/NCR-ServerPreferences.json
+
+# --- Revisión del 13-sep-2026: config de un proceso que ACTÚA de
+#     servidor de voz, no del cliente que se conecta a uno ---
+#
+#   voicechat-server.properties : su propio contenido lo dice
+#     ("Audio packets are always transmitted... independently of other
+#     networking used for the game server", "port=24454",
+#     "bind_address="). Es la configuración de un Simple Voice Chat
+#     SERVIDOR (puerto, IP de bind). En el cliente que se conecta a
+#     54.39.173.193:25598, este archivo no lo lee nadie -- inofensivo,
+#     pero no gestiona nada real y no debería seguir en el pack.
+voicechat/voicechat-server.properties
+
+# --- Migradas desde .packwizignore (13-sep-2026) ------------------
+# Cuando config/ se indexaba directo, estas exclusiones vivían en
+# .packwizignore. Desde que config/ dejó de indexarse (misma sesión,
+# cambio anterior), esas líneas quedaron inalcanzables ahí (el "/config/"
+# de la línea 19 ya excluye todo). Se traen aquí para que
+# poblar-defaults.ps1 -- que lee esta lista, no .packwizignore -- las
+# siga respetando.
+#
+# Cachés y ajustes por máquina:
+dreamdisplays/thumb-cache
+dreamdisplays/yt-cache
+dreamdisplays/watched-videos.json
+sodium-fingerprint.json
+iris-excluded.json
+shulkerboxtooltip_mp_ender_chest_cache.dat
+voicechat/player-volumes.properties
+voicechat/username-cache.json
+# Render Scale: 43 MB de DLLs de AMD FSR y cachés de shader compilado,
+# específicos de la GPU (ver .gitignore/.packwizignore, "config/super_resolution/").
+super_resolution
+
+# Locks de Controlify: archivos de bloqueo de perfil de mando, no
+# configuración. El patrón real es "controlify/*.lock" pero este
+# parser no soporta comodines todavía -- se listan los que existen hoy.
+# Si aparece un profile-3.lock, etc., hay que añadirlo a mano aquí
+# hasta que se implemente el soporte de comodines.
+controlify/profile-1.lock
+controlify/profile-2.lock
+
+# --- NO migradas a propósito: xaero/, maplink/, immersiveminimaps.toml,
+# compasstomapxaeros-common.toml, pingtomapxaeros-client.toml,
+# xaeropatreon.txt, dreamdisplays/fullscreen-sessions.json,
+# itemswapper-server-cache.json.json, controlify/erdm.lock -- ninguno
+# existe hoy en TST2 (comprobado 13-sep-2026). Si reaparecen (Xaero
+# vuelve al pack, etc.), añadirlos entonces, con su motivo.
+#
+# --- REVERTIDAS a propósito: surveyor.toml y hoofprint.toml estaban en
+# esta lista en .packwizignore, pero se escribió cuando esos mods NO
+# estaban instalados ("sobras de un mod de minimapa que ya no está").
+# Ahora SÍ están instalados y sus config son extensas y reales (zoom,
+# sincronización de terreno/landmarks, pings...) -- excluirlas les
+# rompería la personalización a los jugadores. Cayeron a SEMILLA (no
+# se listan en ningún lado, es el default).
+
+
+[forzado]
+
+# Único que sobrevivió la revisión del 13-sep-2026 (ver más abajo).
+# Gobierna la negociación cliente-servidor del protocolo de firma de
+# chat de NoChatReports (demandOnClient, convertToGameMessage,
+# addQueryData): es compatibilidad real de protocolo, no una config
+# de "lado servidor" del propio proceso del jugador.
+NoChatReports/NCR-Common.json
+
+
+# ============================================================
+#  Revisión del 13-sep-2026 — 11 de los 12 originales, degradados
+# ============================================================
+#  Samukis pidió revisar [forzado] a fondo. Se leyó el contenido real
+#  de los 12 archivos (no solo el nombre) y 11 no se sostienen:
+#
+#  --- Rendimiento puro de cliente, cero relación con el servidor ---
+#  ferritecore.mixin.properties : toggles de memoria (deduplicación de
+#    blockstates, mapas de componentes). Nada que sincronizar.
+#  lithium.properties / sodium-mixins.properties : ambos VACÍOS salvo
+#    el comentario de cabecera -- no hay ni un ajuste que forzar hoy.
+#
+#  --- Patrón cliente/servidor del propio proceso, no del servidor
+#      dedicado real (que tiene su copia aparte, en su propia máquina,
+#      ajena a este pack) ---
+#  fieldguide-server.json / pickupnotifier-server.toml /
+#  reachbehind-server.toml / bettercombat/server.json5 / pingwheel.
+#  server.json : el sufijo "-server"/"server.json5" es el "lado
+#  servidor de este mismo proceso" (relevante solo si el jugador
+#  hostea su propio mundo, singleplayer o LAN), NO el servidor
+#  dedicado de ERDM. reachbehind-server.toml lo confirma en su propio
+#  comentario: "This option only takes effect in singleplayer and for
+#  players on a multiplayer server which has this mod installed."
+#  Forzarlos solo le rompe la personalización a quien juegue su propio
+#  mundo con este mismo pack.
+#
+#  --- Personalización que el pack no debería bloquear ---
+#  simple-rpc/server-entries.toml : lista de "qué nombre mostrar en
+#    Discord para cada IP de servidor". Contenido real: enabled=false,
+#    entry=[] (vacía, desactivada). Forzarla le impide a un jugador
+#    añadir sus propios servidores a su propia lista.
+#
+#  Los 11 pasan a SEMILLA (el default de todo lo no listado): el pack
+#  sigue proponiendo un valor razonable, pero deja de pisarlo si el
+#  jugador lo toca. No hacía falta escribirlos aquí -- se listan solo
+#  para que quede constancia de que SÍ se revisaron, no que se
+#  olvidaron.
+#
+#  Si Samukis conoce alguna razón real de compatibilidad con el plugin
+#  del servidor para volver a forzar alguno de estos, añadirlo aquí con
+#  esa razón explícita -- no por el nombre del archivo.

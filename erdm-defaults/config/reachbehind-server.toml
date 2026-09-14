@@ -1,0 +1,8 @@
+#Support passing clicks through attached blocks only when interacting with an empty hand.
+#This generally allows the attached block to still be used, like applying dyes and ink to signs.
+#Default Value: true
+requires_empty_hand = true
+#Attempt interaction with the supporting block when clicking on an attached block before falling back to the originally clicked block itself.
+#Allows for opening attached containers such as chests and crafting tables without clicking on them directly.
+#This option only takes effect in singleplayer and for players on a multiplayer server which has this mod installed.
+pass_clicks_to_attached_block = true

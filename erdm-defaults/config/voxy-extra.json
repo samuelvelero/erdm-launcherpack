@@ -1,0 +1,18 @@
+{
+  "fixNetherFog": true,
+  "flashbackSaveOldLods": false,
+  "flashbackIngest": true,
+  "flashbackCheckLodCache": true,
+  "serverBlacklist": false,
+  "serverBlacklistList": [],
+  "serverWhitelist": false,
+  "serverWhitelistList": [],
+  "lodMirror": false,
+  "lodMirrorList": [],
+  "disableInSingleplayer": true,
+  "replayModSaveCustomMeta": true,
+  "replayModLoadLods": true,
+  "customFogFade": false,
+  "fadeFogStart": 0,
+  "fadeFogEnd": 300
+}

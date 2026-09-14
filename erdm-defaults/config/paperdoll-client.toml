@@ -1,0 +1,79 @@
+#Scale of the paper doll. Also affected by video settings GUI scale.
+#Default Value: 4
+# Default: 4
+# Range: 1 ~ 24
+scale = 4
+#Only show the paper doll when in first-person mode.
+#Default Value: true
+first_person_only = true
+#Amount of ticks the paper doll will be kept on screen after its display conditions are no longer met. Set to 0 to always display the doll.
+#Default Value: 15
+# Default: 15
+# Range: > 0
+display_time = 15
+#Offset on x-axis from the original doll position.
+#Default Value: 0
+# Default: 0
+# Range: > -2147483648
+offset_x = 0
+#Offset on y-axis from the original doll position.
+#Default Value: 0
+# Default: 0
+# Range: > -2147483648
+offset_y = 0
+#Define a position on the screen to align the paper doll display to.
+#Default Value: TOP_LEFT
+#Allowed Values: TOP_LEFT, TOP_CENTER, TOP_RIGHT, CENTER_LEFT, CENTER, CENTER_RIGHT, BOTTOM_LEFT, BOTTOM_CENTER, BOTTOM_RIGHT
+anchor_point = "TOP_LEFT"
+
+#Define how the paper doll head is allowed to rotate while moving around.
+[head_movement]
+	#The maximum position in degrees on the y-axis away from looking straight the paper doll head can be moved to.
+	#Default Value: 30.0
+	# Default: 30.0
+	# Range: 0.0 ~ 90.0
+	max_rotation_yaw = 30.0
+	#The default position in degrees the paper doll head will slowly rotate back towards after movement.
+	#Default Value: 15.0
+	# Default: 15.0
+	# Range: 0.0 ~ 45.0
+	default_rotation = 15.0
+	#The maximum position in degrees on the x-axis away from looking straight the paper doll head can be moved to.
+	#Default Value: 30.0
+	# Default: 30.0
+	# Range: 0.0 ~ 90.0
+	max_rotation_pitch = 30.0
+	#Set the axis the player head may follow movement on.
+	#Default Value: YAW
+	#Allowed Values: YAW, PITCH, BOTH
+	rotation_axis = "YAW"
+
+#Display the paper doll while performing these actions.
+[display_actions]
+	#Display paper doll while flying in creative mode.
+	#Default Value: true
+	flying = true
+	#Display paper doll while crouching.
+	#Default Value: true
+	crouching = true
+	#Display paper doll while sprinting.
+	#Default Value: true
+	sprinting = true
+	#Display paper doll while swimming in water.
+	#Default Value: true
+	swimming = true
+	#Display paper doll while gliding using an elytra.
+	#Default Value: true
+	gliding = true
+	#Display paper doll while spin attacking with a trident.
+	#Default Value: false
+	spin_attacking = false
+	#Display paper doll while crawling in a tight space.
+	#Default Value: true
+	crawling = true
+	#Display paper doll while riding a vehicle.
+	#Default Value: false
+	riding = false
+	#Display paper doll while using an item like a bow.
+	#Default Value: false
+	using_item = false

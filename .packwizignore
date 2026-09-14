@@ -2,13 +2,21 @@
 #  .packwizignore  —  qué NO entra en el índice del modpack
 #  Sintaxis idéntica a .gitignore.
 #
-#  Se distribuyen SOLO: mods/ config/ resourcepacks/
+#  Se distribuyen SOLO: mods/ erdm-defaults/ resourcepacks/
 #                       shaderpacks/ emotes/
 #  Todo lo demás se excluye explícitamente aquí abajo.
 #  (No se puede usar "/*" + excepciones: packwiz aplica la regla
 #   gitignore de que no se readmite nada dentro de una carpeta
 #   ya excluida, y el índice sale vacío.)
 # ============================================================
+
+# config/ YA NO se indexa directamente (cambio del 13-sep-2026): es
+# el mecanismo que pisaba la configuración del jugador en cada sync.
+# Lo que se indexa es erdm-defaults/config/, una copia congelada que
+# el propio erdm-launcher.ps1 del jugador usa para sembrar su config/
+# local sin pisar lo que ya personalizó. Ver erdm-clasificacion.toml
+# y poblar-defaults.ps1.
+/config/
 
 # --- Metadatos internos de Prism Launcher ---
 # Prism escribe sus propios .pw.toml aquí, en formato packwiz pero en
@@ -28,8 +36,15 @@
 /resourcepacks/*.zip
 /shaderpacks/*.zip
 
-# --- Excepciones: jars que NO existen en Modrinth ---
-# Estos dos si viajan en el repo, porque no hay de donde bajarlos.
+# Ajustes personales de shader (BLOOM, TAA, etc. — igual que
+# iris.properties): cada jugador genera el suyo, no se distribuye.
+/shaderpacks/*.zip.txt
+
+# --- Excepciones: jars que NO existen en Modrinth (o sin build para MC 26.2) ---
+# Estos cuatro si viajan en el repo como archivo suelto (sin metafile),
+# porque no hay de donde bajarlos. (desktoptooltips también viaja en el
+# repo, pero SÍ tiene metafile — su excepción está más abajo, en su
+# propio bloque, y NO lleva línea aquí para no indexarlo dos veces.)
 #
 #   itemswapper...4e23d0f...dirty : build propio. El de Modrinth
 #     (git.518b04a) declara el entrypoint 'controlify' en su
@@ -41,8 +56,51 @@
 #   erdmdodge : mod propio del dash local. No esta publicado en ningun
 #     sitio. Quien no lo tenga sigue teniendo dash, calculado en el
 #     servidor; el plugin distingue los dos casos por si solo.
-!/mods/itemswapperfabric1.0.0beta.2mc26.2git.4e23d0fdirty.jar
-!/mods/erdmdodge-0.1.1.jar
+!/mods/itemswapperfabric*.jar
+!/mods/erdmdodge-*.jar
+
+#   hoofprint : "Hoofprint Samukis Edition" segun su propio
+#     fabric.mod.json. No es el build oficial: es un fork/parche
+#     propio. Ademas Modrinth no tiene NINGUNA version de hoofprint
+#     para Minecraft 26.2 (comprobado contra la API, lista vacia),
+#     asi que aunque quisieramos el oficial no existe.
+#
+#   surveyor : su fabric.mod.json es el estandar (sin marca propia),
+#     pero Modrinth tampoco tiene NINGUNA version para MC 26.2.
+#     hoofprint depende de "surveyor >=1.2.4+26.2", asi que este
+#     jar es forzosamente un build no publicado (de fuente o de un
+#     artifact de CI). Sin el, hoofprint no arranca.
+#
+#   desktoptooltips : mod propio (leyenda de teclas sobre el HUD,
+#     estilo Fortnite). No esta publicado en ningun sitio.
+#     Solo entra en el perfil Graficos Sofisticados: ver su bloque
+#     [option] en mods/desktoptooltips.pw.toml.
+#
+#   spyglass_improvements...erdm.1 : fork propio ("Spyglass Improvements
+#     XVaults", de juancarloscp52) para que el zoom del catalejo funcione
+#     tambien guardado en shulker/ender chest/vault via ItemSwapperXVaults.
+#     Obligatorio en ambos perfiles, confirmado por Samukis.
+#
+#   erdmlauncherui : mod propio de ERDM (boton "ERDM..." en la pantalla
+#     de Opciones -> elegir version del modpack / sobrescribir config).
+#     No esta publicado en ningun sitio. Obligatorio en ambos perfiles:
+#     es el propio mecanismo para cambiar de perfil, asi que no puede
+#     depender de un perfil el mismo. Compilado y probado el 13-sep-2026
+#     (ver ERDM_Server de Desarrollo/Development/ErdmLauncherUIMod).
+!/mods/hoofprint-*.jar
+!/mods/surveyor*.jar
+!/mods/spyglass_improvements-*.jar
+!/mods/erdmlauncherui-*.jar
+
+# desktoptooltips-1.0.0.jar NO lleva excepción aquí (aunque sí en
+# .gitignore): tiene metafile propio (mods/desktop-tooltips.pw.toml,
+# mode="url") que ya lo referencia. Si además se indexa como archivo
+# suelto, packwiz lo distribuye DOS veces.
+
+#   Visual Shulker Labels : puerto propio a pack_format 88 (MC 26.2).
+#     El oficial de Modrinth (G5qVDE0L) solo llega a pack_format 64
+#     (hasta 1.21.8); no es intercambiable con ese download.
+!/resourcepacks/Visual Shulker Labels.zip
 
 # --- Mundos y datos de partida (889 MB) ---
 /saves/
@@ -57,6 +115,12 @@
 /config/dreamdisplays/yt-cache/
 /config/dreamdisplays/watched-videos.json
 /config/dreamdisplays/fullscreen-sessions.json
+
+# Render Scale (super_resolution): DLLs de AMD FSR + cachés de shader
+# compilado (.spv), específicos de la GPU de cada máquina (43 MB aquí).
+# Distribuirlos sería mandar binarios de una GPU concreta a todo el
+# mundo. El mod los regenera solo, igual que DreamDisplays.
+/config/super_resolution/
 
 # --- Cachés y estado de ejecución ---
 /.cache/
@@ -73,6 +137,22 @@
 /usercache.json
 /command_history.txt
 /icon.png
+
+# --- Nuevo en TST2 (añadido 12-sep-2026, saneamiento) ---
+# .voxy y .vss: cachés propias del mod Voxy (chunks pre-renderizados,
+# datos de sesión). /debug/: volcados de depuración del propio TST2.
+# hs_err_pid*.log: volcado de un crash de la JVM (1,2 MB), no del pack.
+/.voxy/
+/.vss/
+/debug/
+/hs_err_pid*.log
+
+# .mixin.out: volcado de depuración de Sponge Mixin (clases transformadas
+# reescritas a disco), lo regenera Mixin solo cuando el debug/export está
+# activo. Sin excluir, packwiz lo indexaba como archivo suelto sin poder
+# subirlo nunca al repo (ya lo ignora .gitignore por el /* global), y la
+# Red de seguridad 2 lo marcaba como 404 en cada publicación.
+/.mixin.out/
 
 # --- Estado local de cada jugador ---
 /options.txt
@@ -94,6 +174,38 @@
 /packwiz.json
 /.packwiz-installer-cache/
 
+# ============================================================
+#  ESTADO LOCAL DEL JUGADOR — NUNCA distribuir. Leer esto antes
+#  de tocar las tres líneas de abajo.
+# ============================================================
+# Son los tres archivos con los que el jugador le habla al pre-launch
+# (erdm-launcher.ps1) desde su propia máquina. Distribuirlos invierte
+# el sentido de la comunicación: en vez de que cada jugador decida,
+# el pack le impondría a todos lo que Samukis tenga en SU instancia,
+# y encima en cada sincronización.
+#
+#   erdm-perfil.txt        : el perfil elegido. Distribuido, le pisaría
+#                            a cada jugador su elección de versión en
+#                            cada arranque.
+#   erdm-estado.json       : los hashes de qué defaults se le aplicaron
+#                            a ESTE jugador. Distribuido, la siembra de
+#                            configs creería que todos tienen el mismo
+#                            estado que Samukis y decidiría mal a quién
+#                            pisar y a quién respetar.
+#   erdm-reset-config.flag : la peor de las tres. Es la señal de "resetea
+#                            mi configuración en el próximo arranque".
+#                            Distribuida, le borra la configuración a
+#                            TODOS los jugadores, cada vez que sincronicen.
+#
+# Bug real encontrado el 13-sep-2026: faltaban estas tres líneas.
+# Lo cazó la Red de seguridad 2 de actualizar-pack.ps1 (los vio en el
+# índice pero no en el repo, porque .gitignore sí los ignora) antes de
+# que nada llegara a publicarse.
+/erdm-perfil.txt
+/erdm-estado.json
+/erdm-reset-config.flag
+/erdm-perfil-aplicado.txt
+
 # packwiz-installer.jar lo descarga y AUTO-ACTUALIZA el bootstrap. Si entra al
 # índice se crea una bomba de relojería: git lo ignora (no está en el repo),
 # así que en cuanto el bootstrap lo actualice a una versión nueva el hash
@@ -107,12 +219,29 @@
 # impredecibles. Viaja en el instalador, no en el índice.
 /packwiz-sync.bat
 
+# Mismo motivo que packwiz-sync.bat: erdm-launcher.ps1 corre DURANTE el propio
+# sync (antes y después), así que si viajara en el índice packwiz podría
+# reescribirlo mientras se está ejecutando. Viaja en el instalador.
+# (Bug real encontrado 13-sep-2026: faltaba esta línea y se indexó por
+# accidente — lo cazó la Red de seguridad 2 de actualizar-pack.ps1.)
+/erdm-launcher.ps1
+
+
 # --- Documentación y utilidades de desarrollo ---
 # Se quedan en el repositorio (son útiles en GitHub), pero NO se distribuyen:
 # si entran al índice, cada jugador acaba con el README y el script de
 # publicación dentro de su carpeta de Minecraft.
 /README.md
 /actualizar-pack.ps1
+
+# Herramientas de desarrollo de perfiles/defaults (13-sep-2026): las usa
+# Samukis a mano desde su propia instancia. erdm-perfiles.txt SÍ viaja
+# (no está aquí): el cliente lo necesita para sembrar el perfil elegido
+# antes de que exista packwiz.json.
+/erdm-clasificacion.toml
+/aplicar-perfiles.ps1
+/probar-perfiles.ps1
+/poblar-defaults.ps1
 
 # ============================================================
 #  Estado por jugador y sobras (añadido 2026-08-22)

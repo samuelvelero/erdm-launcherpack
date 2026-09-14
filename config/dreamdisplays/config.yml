@@ -1,9 +1,0 @@
-mute-on-alt-tab: false
-default-render-distance: 96
-default-default-display-volume: 0.5
-displays-enabled: false
-ytdlp-cookies-from-browser: none
-ytdlp-proxy: ''
-use-hw-accel: true
-audio-acoustics: advanced
-audio-output-profile: headphones

@@ -1,0 +1,42 @@
+{
+  "displayIcon": "MOST",
+  "customName": "PREFER",
+  "iconPositionOptionsGeneral": {
+    "translateX": 8,
+    "translateY": 8,
+    "scale": 16
+  },
+  "stackSizeOptions": {
+    "minStackSize": 1,
+    "minStackCount": 1
+  },
+  "groupEnchantment": false,
+  "showCapacity": false,
+  "capacityBarOptions": {
+    "translateX": 2,
+    "translateY": 16,
+    "length": 10,
+    "width": 1,
+    "direction": "LEFT_TO_RIGHT",
+    "displayShadow": true,
+    "hideWhenEmpty": true,
+    "hideWhenFull": false
+  },
+  "disableMod": true,
+  "supportBundles": false,
+  "iconPositionOptionsBundle": {
+    "translateX": 12,
+    "translateY": 4,
+    "scale": 10
+  },
+  "iconPositionOptionsStacked": {
+    "translateX": 12,
+    "translateY": 4,
+    "scale": 10
+  },
+  "supportOtherContainers": false,
+  "shulkerInventoryOptions": {
+    "shulkerInventoryRows": 3,
+    "shulkerInventoryCols": 9
+  }
+}

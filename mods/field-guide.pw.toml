@@ -1,0 +1,34 @@
+filename = 'fieldguide-fabric-26.2-1.7.11.jar'
+name = 'Field Guide'
+side = 'both'
+x-prismlauncher-loaders = [ 'fabric' ]
+x-prismlauncher-mc-versions = [ '26.2' ]
+x-prismlauncher-release-type = 'release'
+x-prismlauncher-version-number = '1.7.11-26.2-fabric'
+
+[download]
+hash = 'd6a37a4099d2b1c58815dae1e43794cf8d047781aaae4aef9717015234253ff5c31597c3d911df3e34a7f2eb4767e63c63d614168b1cfee4db64af058e604e90'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/72RRCWM6/versions/LpPxYnPl/fieldguide-fabric-26.2-1.7.11.jar'
+
+[update.modrinth]
+mod-id = '72RRCWM6'
+version = 'LpPxYnPl'
+
+[[x-prismlauncher-dependencies]]
+addonId = 'PKoLkD98'
+type = 'REQUIRED'
+
+[[x-prismlauncher-dependencies]]
+addonId = 'UaizcMKP'
+type = 'REQUIRED'
+
+[[x-prismlauncher-dependencies]]
+addonId = '1eAoo2KR'
+type = 'OPTIONAL'
+
+[option]
+optional = true
+description = "Field Guide. Solo en Gráficos Sofisticados."
+default = false
