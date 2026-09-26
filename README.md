@@ -13,6 +13,28 @@ Modpack del SMP privado **El Rincón de Minecraft**, distribuido con
 
 ---
 
+## Dos modpacks, dos ramas
+
+Desde el 25-sep-2026 hay dos modpacks independientes en este mismo repo:
+
+| Rama | Versión | Instancia de desarrollo |
+|---|---|---|
+| `main` | **Esencial** (L) | `ERDM-Official-L` |
+| `sofisticado` | **Gráficos Sofisticados** (H) | `ERDM-Official-H` |
+
+Cada una es un pack packwiz completo (`pack.toml` + `index.toml`), sin mods
+opcionales. `packwiz-sync.bat` elige la URL según `erdm-perfil.txt`. Si el
+jugador cambia de versión (botón en Opciones de Minecraft), el siguiente
+arranque borra `mods/`, los resourcepacks/shaders de los dos packs (no los
+que puso el jugador), `erdm-defaults/` y `packwiz.json`, y packwiz instala
+el otro pack desde cero. Un mod común a las dos versiones se actualiza en
+las dos ramas.
+
+`main` es también la que siguen los instaladores 1.2.0 y anteriores: esos
+jugadores reciben Esencial hasta que instalen el 1.3.0.
+
+---
+
 ## Cómo funciona
 
 La instancia de Prism tiene un **pre-launch command** que ejecuta

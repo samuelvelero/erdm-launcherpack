@@ -1,8 +1,13 @@
-<#
-    actualizar-pack.ps1  —  publica los cambios del modpack ERDM-Official
+﻿<#
+    actualizar-pack.ps1  —  publica los cambios de UNO de los dos modpacks
 
     Ejecutar DESPUÉS de tocar mods/config/resourcepacks/shaders en Prism.
-    Publica a: https://github.com/samuelvelero/erdm-launcherpack
+    Publica a: https://github.com/samuelvelero/erdm-launcherpack, en la
+    rama de la instancia desde la que se ejecuta:
+        ERDM-Official-L  ->  main         (Esencial)
+        ERDM-Official-H  ->  sofisticado  (Gráficos Sofisticados)
+    Son dos packs independientes: un mod común a los dos se actualiza en
+    las dos instancias y se publica dos veces.
 
     Uso:
         .\actualizar-pack.ps1
@@ -48,6 +53,27 @@ if (Get-Process -Name 'prismlauncher' -ErrorAction SilentlyContinue) {
     return
 }
 
+# --- Cada instancia publica SOLO en su rama ---
+# Las dos instancias son clones del mismo repo. Si la -H tuviera por error
+# la rama main, este script publicaría Gráficos Sofisticados a todos los
+# jugadores de Esencial (y a todos los instaladores 1.2.0, que siguen main).
+$instancia = Split-Path (Split-Path $PSScriptRoot -Parent) -Leaf
+$ramaEsperada = switch -Wildcard ($instancia) {
+    '*-L' { 'main' }
+    '*-H' { 'sofisticado' }
+    default { $null }
+}
+$ramaActual = (git rev-parse --abbrev-ref HEAD).Trim()
+if (-not $ramaEsperada) {
+    Write-Warning "No sé qué rama le toca a la instancia '$instancia' (debe acabar en -L o -H)."
+    return
+}
+if ($ramaActual -ne $ramaEsperada) {
+    Write-Warning "La instancia '$instancia' debería estar en la rama '$ramaEsperada', pero está en '$ramaActual'. No se publica nada."
+    return
+}
+Write-Host "Instancia $instancia -> rama $ramaActual" -ForegroundColor Cyan
+
 # ------------------------------------------------------------------
 #  Paso 1: sincronizar los metadatos de Prism con los de packwiz
 #
@@ -91,23 +117,6 @@ foreach ($f in $enMods) {
 }
 
 Write-Host "      $($enIndex.Count) mods | $nuevos actualizados | $borrados eliminados"
-
-# ------------------------------------------------------------------
-#  Paso 1.5: reaplicar los bloques [option] de los perfiles
-#
-#  El paso anterior acaba de copiar mods/.index/*.pw.toml -> mods/,
-#  y Prism no sabe nada de nuestro esquema de perfiles: esa copia
-#  BORRA cualquier bloque [option] que hubiera en el .pw.toml de
-#  destino. aplicar-perfiles.ps1 los reescribe a partir de
-#  erdm-perfiles.txt -- es idempotente, así que no importa si ya
-#  estaban o no.
-# ------------------------------------------------------------------
-Write-Host '[1.5/4] Reaplicando perfiles (Esencial / Gráficos Sofisticados)...' -ForegroundColor Cyan
-& (Join-Path $PSScriptRoot 'aplicar-perfiles.ps1')
-if ($LASTEXITCODE -ne 0) {
-    Write-Warning 'aplicar-perfiles.ps1 encontró nombres de erdm-perfiles.txt sin metafile. Revisa el aviso de arriba antes de publicar.'
-    return
-}
 
 if ($ActualizarDefaults) {
     Write-Host '      -ActualizarDefaults: recapturando config/ -> erdm-defaults/...' -ForegroundColor Cyan
@@ -198,7 +207,8 @@ $estadoLocalJugador = @(
     'erdm-perfil.txt',
     'erdm-estado.json',
     'erdm-reset-config.flag',
-    'erdm-perfil-aplicado.txt'
+    'erdm-perfil-aplicado.txt',
+    'erdm-pack-aplicado.txt'
 )
 $estadoFiltrado = $indexados | Where-Object { $estadoLocalJugador -contains $_ }
 if ($estadoFiltrado) {
@@ -309,7 +319,7 @@ if ($huerfanosDeMetafile) {
 }
 Write-Host "      sin .jar huérfanos"
 
-# --- Red de seguridad 5: TST2 es el playground de Samukis y se
+# --- Red de seguridad 5: la instancia de desarrollo se
 #     desordena por diseño -- este chequeo se repite en cada
 #     publicación, no es un saneamiento de una sola vez. ---
 $problemasDeOrden = @()
@@ -331,11 +341,11 @@ foreach ($carpeta in @('resourcepacks', 'shaderpacks')) {
 }
 
 if ($problemasDeOrden) {
-    Write-Warning 'TST2 tiene desorden pendiente de revisar antes de publicar:'
+    Write-Warning 'La instancia tiene desorden pendiente de revisar antes de publicar:'
     $problemasDeOrden | ForEach-Object { Write-Warning "  $_" }
     return
 }
-Write-Host "      TST2 en orden"
+Write-Host "      instancia en orden"
 
 # ------------------------------------------------------------------
 #  Paso 3: publicar
@@ -362,7 +372,7 @@ if (-not $Mensaje) {
 git commit -m $Mensaje
 if ($LASTEXITCODE -ne 0) { throw "git commit falló" }
 
-git push
+git push origin $ramaActual
 if ($LASTEXITCODE -ne 0) { throw "git push falló" }
 
 Write-Host ''

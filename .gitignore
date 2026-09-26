@@ -26,7 +26,10 @@
 !/emotes/
 !/erdm-defaults/
 !/erdm-clasificacion.toml
-!/erdm-perfiles.txt
+# Herramienta de desarrollo: se versiona para no perderla (se perdió una
+# vez al borrar la instancia TST2, 25-sep-2026). No se distribuye: está
+# en .packwizignore.
+!/poblar-defaults.ps1
 
 # config/ YA NO se rastrea directamente (cambio del 13-sep-2026).
 # Es el mecanismo antiguo: cada partida ensuciaba config/ (timestamps,

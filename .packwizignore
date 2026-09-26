@@ -73,8 +73,7 @@
 #
 #   desktoptooltips : mod propio (leyenda de teclas sobre el HUD,
 #     estilo Fortnite). No esta publicado en ningun sitio.
-#     Solo entra en el perfil Graficos Sofisticados: ver su bloque
-#     [option] en mods/desktoptooltips.pw.toml.
+#     Solo va en Graficos Sofisticados (rama "sofisticado").
 #
 #   spyglass_improvements...erdm.1 : fork propio ("Spyglass Improvements
 #     XVaults", de juancarloscp52) para que el zoom del catalejo funcione
@@ -83,9 +82,9 @@
 #
 #   erdmlauncherui : mod propio de ERDM (boton "ERDM..." en la pantalla
 #     de Opciones -> elegir version del modpack / sobrescribir config).
-#     No esta publicado en ningun sitio. Obligatorio en ambos perfiles:
-#     es el propio mecanismo para cambiar de perfil, asi que no puede
-#     depender de un perfil el mismo. Compilado y probado el 13-sep-2026
+#     No esta publicado en ningun sitio. Va en las DOS ramas: es el
+#     propio mecanismo para cambiar de version, asi que no puede faltar
+#     en ninguna. Compilado y probado el 13-sep-2026
 #     (ver ERDM_Server de Desarrollo/Development/ErdmLauncherUIMod).
 !/mods/hoofprint-*.jar
 !/mods/surveyor*.jar
@@ -205,6 +204,9 @@
 /erdm-estado.json
 /erdm-reset-config.flag
 /erdm-perfil-aplicado.txt
+# Qué pack se instaló la última vez (desde 1.3.0). Distribuido, haría
+# creer a cada jugador que ya tiene el pack de Samukis y nunca cambiaría.
+/erdm-pack-aplicado.txt
 
 # packwiz-installer.jar lo descarga y AUTO-ACTUALIZA el bootstrap. Si entra al
 # índice se crea una bomba de relojería: git lo ignora (no está en el repo),
@@ -234,13 +236,9 @@
 /README.md
 /actualizar-pack.ps1
 
-# Herramientas de desarrollo de perfiles/defaults (13-sep-2026): las usa
-# Samukis a mano desde su propia instancia. erdm-perfiles.txt SÍ viaja
-# (no está aquí): el cliente lo necesita para sembrar el perfil elegido
-# antes de que exista packwiz.json.
+# Herramientas de desarrollo de defaults (13-sep-2026): las usa Samukis
+# a mano desde su propia instancia.
 /erdm-clasificacion.toml
-/aplicar-perfiles.ps1
-/probar-perfiles.ps1
 /poblar-defaults.ps1
 
 # ============================================================
