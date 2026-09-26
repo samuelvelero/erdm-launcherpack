@@ -1,4 +1,4 @@
-name = "ERDM-Official"
+name = "ERDM Esencial"
 author = "Samukis"
 version = "1.0.0"
 pack-format = "packwiz:1.1.0"
@@ -6,7 +6,7 @@ pack-format = "packwiz:1.1.0"
 [index]
 file = "index.toml"
 hash-format = "sha256"
-hash = "33e33b212e6af41970c919f7e22a134430774f3a1f43bc3fbc98e5870e6df24d"
+hash = "6d1ee6375a463388078131a3b2012b068c38b9331392772a18c1b78a01a3ce60"
 
 [versions]
 fabric = "0.19.3"
