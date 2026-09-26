@@ -16,8 +16,3 @@ url = 'https://cdn.modrinth.com/data/ft2cYBpB/versions/dKZiIjXj/atmospherics-2.6
 [update.modrinth]
 mod-id = 'ft2cYBpB'
 version = 'dKZiIjXj'
-
-[option]
-optional = true
-description = "ATMOSPHERICS. Solo en Gráficos Sofisticados."
-default = false

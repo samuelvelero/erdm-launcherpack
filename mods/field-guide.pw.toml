@@ -27,8 +27,3 @@ type = 'REQUIRED'
 [[x-prismlauncher-dependencies]]
 addonId = '1eAoo2KR'
 type = 'OPTIONAL'
-
-[option]
-optional = true
-description = "Field Guide. Solo en Gráficos Sofisticados."
-default = false

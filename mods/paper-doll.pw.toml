@@ -27,8 +27,3 @@ type = 'REQUIRED'
 [[x-prismlauncher-dependencies]]
 addonId = 'ohNO6lps'
 type = 'REQUIRED'
-
-[option]
-optional = true
-description = "Paper Doll. Solo en Gráficos Sofisticados."
-default = false

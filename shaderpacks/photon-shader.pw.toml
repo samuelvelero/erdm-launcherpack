@@ -11,8 +11,3 @@ hash = "40bcbac9c656f2965f543e4b35cd0698723b2db8b67662f1b53c14223cfbef7d60d7fbf0
 [update.modrinth]
 mod-id = "lLqFfGNs"
 version = "gUv7fBPN"
-
-[option]
-optional = true
-description = "Photon Shaders. Solo en Gráficos Sofisticados."
-default = false

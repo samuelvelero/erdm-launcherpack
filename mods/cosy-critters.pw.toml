@@ -23,8 +23,3 @@ type = 'REQUIRED'
 [[x-prismlauncher-dependencies]]
 addonId = 'mOgUt4GM'
 type = 'OPTIONAL'
-
-[option]
-optional = true
-description = "Cosy Critters & Creepy Crawlies. Solo en Gráficos Sofisticados."
-default = false

@@ -50,8 +50,3 @@ url = 'https://cdn.modrinth.com/data/jxeW9Fvw/versions/KAzHQVTh/glowing-glow-squ
 [update.modrinth]
 mod-id = 'jxeW9Fvw'
 version = 'KAzHQVTh'
-
-[option]
-optional = true
-description = "Glow Squids Actually Glow. Solo en Gráficos Sofisticados."
-default = false

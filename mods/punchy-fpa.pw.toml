@@ -16,8 +16,3 @@ url = 'https://cdn.modrinth.com/data/8aoMKplv/versions/IgFIRWlA/punchy-2.7d-fabr
 [update.modrinth]
 mod-id = '8aoMKplv'
 version = 'IgFIRWlA'
-
-[option]
-optional = true
-description = "Punchy!. Solo en Gráficos Sofisticados."
-default = false

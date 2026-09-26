@@ -11,8 +11,3 @@ hash = "ab401a6cb456b1d2d4c6dd907cadab268e9d16363e758857e40b7850d036ac37332cc056
 [update.modrinth]
 mod-id = "6SLU7tS5"
 version = "tPC8gaIQ"
-
-[option]
-optional = true
-description = "Default Dark Mode. Solo en Gráficos Sofisticados."
-default = false

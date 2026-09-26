@@ -11,8 +11,3 @@ hash = "7414d6207279ee34cabc30d847e550c158d361131e401bc7b4d70fe4aceec226aeff07bc
 [update.modrinth]
 mod-id = "T4pK4GiQ"
 version = "RLEhLx95"
-
-[option]
-optional = true
-description = "Fresh Animations: Quivers. Solo en Gráficos Sofisticados."
-default = false

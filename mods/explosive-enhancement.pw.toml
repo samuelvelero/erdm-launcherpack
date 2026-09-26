@@ -27,8 +27,3 @@ type = 'REQUIRED'
 [[x-prismlauncher-dependencies]]
 addonId = 'mOgUt4GM'
 type = 'OPTIONAL'
-
-[option]
-optional = true
-description = "Explosive Enhancement. Solo en Gráficos Sofisticados."
-default = false

@@ -16,8 +16,3 @@ url = 'https://cdn.modrinth.com/data/HFk2Vqdv/versions/N3WhPW2n/mace3d-fabric-mc
 [update.modrinth]
 mod-id = 'HFk2Vqdv'
 version = 'N3WhPW2n'
-
-[option]
-optional = true
-description = "Awesome 3D Mace. Solo en Gráficos Sofisticados."
-default = false

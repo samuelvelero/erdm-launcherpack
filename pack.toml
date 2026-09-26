@@ -1,4 +1,4 @@
-name = "ERDM-Official"
+name = "ERDM Gráficos Sofisticados"
 author = "Samukis"
 version = "1.0.0"
 pack-format = "packwiz:1.1.0"
@@ -6,7 +6,7 @@ pack-format = "packwiz:1.1.0"
 [index]
 file = "index.toml"
 hash-format = "sha256"
-hash = "33e33b212e6af41970c919f7e22a134430774f3a1f43bc3fbc98e5870e6df24d"
+hash = "74b4cba0bb18d67000d940ecf837b91762f7f1fa5d94af00cf1ba105686b079c"
 
 [versions]
 fabric = "0.19.3"

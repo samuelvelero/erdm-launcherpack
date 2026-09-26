@@ -19,8 +19,3 @@ version = '67xQnLDS'
 [[x-prismlauncher-dependencies]]
 addonId = 'P7dR8mSH'
 type = 'REQUIRED'
-
-[option]
-optional = true
-description = "Not Enough Animations. Solo en Gráficos Sofisticados."
-default = false

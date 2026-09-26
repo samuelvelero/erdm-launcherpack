@@ -11,8 +11,3 @@ hash = "3f50d72bdc7274aa01a7c68d1e8a8f592eddc5e28ad9c60d796815a9892751bc862c0ee0
 [update.modrinth]
 mod-id = "uvpymuxq"
 version = "XWtayRKd"
-
-[option]
-optional = true
-description = "Motschen's Better Leaves. Solo en Gráficos Sofisticados."
-default = false

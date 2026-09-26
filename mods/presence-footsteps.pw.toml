@@ -27,8 +27,3 @@ type = 'OPTIONAL'
 [[x-prismlauncher-dependencies]]
 addonId = 'P7dR8mSH'
 type = 'REQUIRED'
-
-[option]
-optional = true
-description = "Presence Footsteps. Solo en Gráficos Sofisticados."
-default = false

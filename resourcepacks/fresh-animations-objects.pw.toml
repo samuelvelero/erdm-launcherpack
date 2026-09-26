@@ -11,8 +11,3 @@ hash = "61b76ed37e5ecfc4b5d25c545b011bb5bb59c49c97733d0f8b3afa725c886ed82e787d17
 [update.modrinth]
 mod-id = "23O9JVMV"
 version = "AIGgXNdl"
-
-[option]
-optional = true
-description = "Fresh Animations: Objects. Solo en Gráficos Sofisticados."
-default = false

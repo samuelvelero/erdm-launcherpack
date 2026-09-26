@@ -31,8 +31,3 @@ type = 'REQUIRED'
 [[x-prismlauncher-dependencies]]
 addonId = 'YL57xq9U'
 type = 'OPTIONAL'
-
-[option]
-optional = true
-description = "Wakes. Solo en Gráficos Sofisticados."
-default = false

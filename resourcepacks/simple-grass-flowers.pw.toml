@@ -11,8 +11,3 @@ hash = "9ad752e71feb8fea4ccf2ecb23eecb85d48285e95744f28902bf505423a849a2ff74da62
 [update.modrinth]
 mod-id = "ti9KkMHm"
 version = "Cd4Xa7Sr"
-
-[option]
-optional = true
-description = "Simple Grass Flowers. Solo en Gráficos Sofisticados."
-default = false

@@ -23,8 +23,3 @@ type = 'REQUIRED'
 [[x-prismlauncher-dependencies]]
 addonId = 'hYykXjDp'
 type = 'REQUIRED'
-
-[option]
-optional = true
-description = "Subtle Effects. Solo en Gráficos Sofisticados."
-default = false
