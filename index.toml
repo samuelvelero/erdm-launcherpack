@@ -457,6 +457,10 @@ file = "erdm-defaults/config/zoomify.json"
 hash = "82caee9b1f532332c798ee216c9a9ba5857c35e58afacba44946d9264fc05b36"
 
 [[files]]
+file = "erdm-servidor.json"
+hash = "7d71a7f4ee8df9c1c40a50d5aa41f2b1c1eb914881d92a761251693cb5c85860"
+
+[[files]]
 file = "mods/advancements-fullscreen.pw.toml"
 hash = "a454444cb80ee0115682d1584f096afe5de3b8a103e74cc36bf8ca3f3ffb8142"
 metafile = true
