@@ -121,3 +121,9 @@
 /config/pingtomapxaeros-client.toml
 /config/surveyor.toml
 /config/hoofprint.toml
+
+# Packs propios en carpeta (en desarrollo) y restos que genera Prism: locales, nunca se publican.
+/resourcepacks/*/
+/mods/*.duplicate*
+/mods/*.PRODUCCION-*
+/resourcepacks/*.duplicate*
