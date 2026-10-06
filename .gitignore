@@ -127,3 +127,6 @@
 /mods/*.duplicate*
 /mods/*.PRODUCCION-*
 /resourcepacks/*.duplicate*
+
+# IP del servidor: erdm-launcher.ps1 la aplica al servers.dat de cada jugador.
+!/erdm-servidor.json
