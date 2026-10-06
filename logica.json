@@ -1,3 +1,10 @@
 {
-  "versiones": []
+    "versiones":  [
+                      {
+                          "version":  1,
+                          "lanzadorMinimo":  1,
+                          "archivo":  "v1/erdm-logica.ps1",
+                          "sha256":  "ba55fed1a919de82d0a44583b22983ad6569e9c9676570a8a998f6c1733826dc"
+                      }
+                  ]
 }
