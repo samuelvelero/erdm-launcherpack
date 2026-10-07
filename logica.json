@@ -5,6 +5,12 @@
                           "lanzadorMinimo":  1,
                           "archivo":  "v1/erdm-logica.ps1",
                           "sha256":  "ba55fed1a919de82d0a44583b22983ad6569e9c9676570a8a998f6c1733826dc"
+                      },
+                      {
+                          "version":  2,
+                          "lanzadorMinimo":  1,
+                          "archivo":  "v2/erdm-logica.ps1",
+                          "sha256":  "ec467c54d09bd9d3c13c73d4e53a4888e2f5b4589199e50657a46e212a95c772"
                       }
                   ]
 }
