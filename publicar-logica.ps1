@@ -43,7 +43,10 @@ if ($Promover) {
     $enPruebas = (git rev-parse origin/logica-pruebas).Trim()
     if ($local -ne $enPruebas) { throw 'HEAD no coincide con origin/logica-pruebas: haz push de pruebas antes de promover.' }
     # Sin --force: si `logica` no es antecesora, git lo rechaza.
-    git push origin logica-pruebas:logica
+    # git escribe su progreso por stderr: con Stop, PowerShell 5.1 lo toma por error.
+    $ErrorActionPreference = 'Continue'
+    git push origin logica-pruebas:logica 2>&1 | Out-Host
+    $ErrorActionPreference = 'Stop'
     if ($LASTEXITCODE -ne 0) { throw 'No se pudo promover (¿logica tiene commits que pruebas no?).' }
     Write-Host 'Promovido: todos los jugadores recibirán esta lógica en su próximo arranque.' -ForegroundColor Green
     return
@@ -88,6 +91,8 @@ git commit -q -m "$Mensaje (v$n)"
 if ($LASTEXITCODE -ne 0) { throw 'git commit falló' }
 
 if ($SoloLocal) { Write-Host "v$n preparada (sin push)." -ForegroundColor DarkGray; return }
-git push origin logica-pruebas
+$ErrorActionPreference = 'Continue'
+git push origin logica-pruebas 2>&1 | Out-Host
+$ErrorActionPreference = 'Stop'
 if ($LASTEXITCODE -ne 0) { throw 'git push falló' }
 Write-Host "v$n publicada en el canal de pruebas. Pruébala y luego: .\publicar-logica.ps1 -Promover" -ForegroundColor Green
